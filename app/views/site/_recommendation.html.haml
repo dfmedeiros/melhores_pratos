@@ -1,0 +1,55 @@
+%li.media
+  %a.pull-left.thumbnail{href: "#"}
+    %img.media-object{alt: "Penélope Barbosa", "data-content" => "<strong>Total de Recomendações: </strong> 132 <br /> <strong>Membro desde: </strong> 13 de Janeiro de 2012 <br /> <strong>Cidade: </strong> João Pessoa", "data-original-title" => "<img src='assets/avatar-usuario-thumb.jpg' /> <strong>Penélope Barbosa</strong>", "data-rel" => "popover", src: "assets/avatar-usuario.jpg"}/
+  .media-body
+    %h5.media-heading
+      %a{href: "#"} Penélope Barbosa
+      %span 3 March, 2013
+    %p
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+    / Nested media object
+    .media
+      %a.pull-left{href: "#"}
+        %img.media-object.img-polaroid{alt: "", src: "assets/avatar-prato.jpg"}/
+      .media-body
+        %h5.media-heading
+          %a{href: "#"} Macarrão Alho e óleo
+        %p
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+        %ul#0001.post-meta.recommendations
+          %li.first
+            %i.icon-chevron-down
+            %span
+              %a{href: "#"} 12 usuários recomendam
+          %li.last
+            %a.btn.btn-mini.btn-theme{href: ""}
+              %i.icon-thumbs-up
+              Recomendar
+        / Nested media object
+        .clearfix
+        #recommendations-dish-0001.media-noborder.recommendations-dish
+          %ul.thumbnails
+            - 12.times do
+              %li
+                = link_to "#" do
+                  = image_tag "avatar-usuario-thumb.jpg"
+          %br/
+          .clearfix
+          %ul#0001.post-meta.comments
+            %li.first
+              %span 2 comentários
+            %li.last
+              %a{href: ""} Ver todos
+          .clearfix
+          #comments-dish-0001.media-noborder.comments-dish
+            %ul.media-list
+              - 2.times do
+                %li.media-borderbottom
+                  %a.pull-left.thumbnail{href: "#"}
+                    %img.media-object{alt: "Penélope Barbosa", "data-content" => "<strong>Total de Recomendações: </strong> 132 <br /> <strong>Membro desde: </strong> 13 de Janeiro de 2012 <br /> <strong>Cidade: </strong> João Pessoa", "data-original-title" => "<img src='assets/avatar-usuario-thumb.jpg' /> <strong>Penélope Barbosa</strong>", "data-rel" => "popover", src: "assets/avatar-usuario-thumb.jpg"}/
+                  .media-body
+                    %h5.media-heading
+                      %a{href: "#"} Mike sullivan
+                      %span 3 March, 2013
+                    %p
+                      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.

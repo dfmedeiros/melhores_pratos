@@ -1,0 +1,26 @@
+%header
+  .navbar.navbar-static-top
+    .navbar-inner
+      .container
+        .logo
+          = link_to root_path do
+            = image_tag "logo.png"
+        .navigation
+          %nav
+            %ul.nav.topnav
+              %li
+                = link_to "#" do
+                  %i.icon-food
+                  Publicar Cardápio
+              %li
+                = link_to "#sign_up", data: { toggle: "modal" } do
+                  %i.icon-lock
+                  Registre-se
+              %li
+                = link_to "#sign_in", data: { toggle: "modal" } do
+                  %i.icon-signin
+                  Login
+
+= render "shared/sign_in"
+= render "shared/sign_up"
+= render "shared/reset_password"

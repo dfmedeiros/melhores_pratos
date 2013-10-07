@@ -1,0 +1,204 @@
+/* MAPA ***********************************************************************/
+section.mapa {
+    clear: both;
+    color: #FFF;
+    height: 350px;
+    background: #F5F5F5;
+    padding: 0;
+    margin: 0;
+    border-bottom: 2px solid #E9E9E9;
+    border-top: 1px solid #E9E9E9;
+    margin-bottom: 30px;
+    position: relative;
+}
+section.mapa .overmap{
+    opacity: 0.90;
+    padding: 10px 0;
+    position:absolute;
+    top: 30px;
+}
+section.mapa .overmap div{
+    color: #FFF;
+    background-color: #A52625;
+    padding: 5px 10px;
+    margin-bottom:2px;
+    max-width: 375px;
+    margin-left: 15px;
+    border-radius: 2px;
+}
+section.mapa .overmap ul{
+    padding: 0;
+    list-style-type: none;
+    min-height: 20px;
+    margin: 0;
+    margin-left: 15px;
+
+}
+section.mapa .overmap ul li{
+    background-color: #A52625;
+    min-height: 20px;
+    padding: 5px 22px;
+    float: left;
+    margin-right: 2px;
+    margin-bottom:2px;
+    border-radius: 2px;
+}
+section.mapa .overmap ul li span{
+    float: left;
+}
+section.mapa .overmap ul li.arrow{
+    float: left;
+    padding: 0px;
+    background-color: transparent;
+    margin: 0 -12px 0 -16px;
+}
+
+/* BANNER ***********************************************************************/
+section.banner {
+    clear: both;
+    color: #FFF;
+    height: 240px;
+    background: #F5F5F5;
+    padding: 0;
+    margin: 0;
+    border-bottom: 2px solid #E9E9E9;
+    border-top: 1px solid #E9E9E9;
+    margin-bottom: 30px;
+    position: relative;
+    background: #F5F5F5 url(bg-header.jpg) top center;
+}
+section.banner .overmap{
+    opacity: 0.90;
+    padding: 10px 0;
+    position:absolute;
+    top: 30px;
+}
+section.banner .overmap div{
+    color: #FFF;
+    background-color: #A52625;
+    padding: 5px 10px;
+    margin-bottom:2px;
+    max-width: 575px;
+    border-radius: 2px;
+}
+
+section.banner .overmap div.search{
+    padding: 10px 20px;
+}
+section.banner .overmap ul{
+    padding: 0;
+    list-style-type: none;
+    min-height: 20px;
+    margin: 0;
+    margin-left: 15px;
+
+}
+section.banner .overmap ul li{
+    background-color: #A52625;
+    min-height: 20px;
+    padding: 5px 22px;
+    float: left;
+    margin-right: 2px;
+    margin-bottom:2px;
+    border-radius: 2px;
+}
+section.banner .overmap ul li span{
+    float: left;
+}
+section.banner .overmap ul li.arrow{
+    float: left;
+    padding: 0px;
+    background-color: transparent;
+    margin: 0 -12px 0 -16px;
+}
+
+section.banner  .search {
+    margin:15px 0 0;
+    padding:0;
+    float:left;
+    text-align: left;
+}
+
+section.banner  .search p.under {
+    margin: 10px 0 0 0;
+}
+
+section.banner  .search p.over {
+    margin: 0 0 10px 0;
+}
+
+
+section.banner  .search form{
+    margin:0;
+}
+
+section.banner  .search input {
+    border:none;
+    font-size:18px;
+    font-family:'Open Sans', Arial, sans-serif;
+    padding:10px;
+}
+
+section.banner  .search button {
+    border:none;
+    font-size:18px;
+    font-family:'Open Sans', Arial, sans-serif;
+    background:#353535;
+    color:#fff;
+    text-shadow:none;
+    padding:10px;
+}
+
+section.banner  .search p{
+
+    max-width: 545px;
+}
+
+/*ULTIMOS CARDAPIOS CADASTRADOS ***********************************************/
+.ultimocardapiocadastrado{
+    clear: both;
+    margin-bottom: 20px;
+}
+.ultimocardapiocadastrado h3 a{
+    color: inherit;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.ultimocardapiocadastrado h3 a:hover{
+    text-decoration: none;
+    color: #A52625;
+}
+
+.ultimocardapiocadastrado h3{
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 15px;
+    font-size: 15px;
+}
+.ultimocardapiocadastrado p{
+    margin: 0;
+    padding: 0;
+    line-height: 17px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ultimocardapiocadastrado a{
+
+}
+
+.ultimocardapiocadastrado  p a{
+    color: #999999;
+}
+
+.borderradius2{
+    border-radius: 2px;
+}
+.avatar20{
+    width: 20px;
+    max-height: 20px;
+}

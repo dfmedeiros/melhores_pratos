@@ -1,0 +1,42 @@
+#sign_in.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+    %h3#myModalLabel Login
+  .modal-body
+    .row-login
+      %p Acesse com seu cadastro
+      %form.login-form.form-horizontal{action: "#", method: "post", name: "login-form"}
+        .control-group
+          %label.control-label{for: "inputEmail"}
+            Email
+            %span *
+          .controls
+            %input#inputEmail{placeholder: "Seu email", type: "text"}/
+        .control-group
+          %label.control-label{for: "inputSenha"}
+            Senha
+            %span *
+          .controls
+            %input#inputSenha{placeholder: "Sua senha", type: "password"}/
+        .control-group
+          .controls.submit
+            %a.btn.btn-theme{href: "#"} Entrar
+    .row-social-login
+      %p Acesse pelas redes sociais
+      %ul.social-signin-group
+        %li
+          %a{href: ""}
+            .social-signin.social-signin-twitter
+        %li
+          %a{href: ""}
+            .social-signin.social-signin-facebook
+        %li
+          %a{href: ""}
+            .social-signin.social-signin-google
+  .modal-footer
+    %p
+      Não possui uma conta?
+      %a{"aria-hidden" => "true", "data-dismiss" => "modal", "data-toggle" => "modal", href: "#sign_up", role: "button"} Registre-se.
+      %br/
+      Esqueceu sua senha?
+      %a{"aria-hidden" => "true", "data-dismiss" => "modal", "data-toggle" => "modal", href: "#reset_password", role: "button"} Recupere aqui.

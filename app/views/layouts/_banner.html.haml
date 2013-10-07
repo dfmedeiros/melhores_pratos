@@ -1,0 +1,10 @@
+%section.banner
+  .inner
+    .container
+      .overmap
+        .search
+          %p.over Cardápios online e recomendações de pratos.
+          = form_tag "#", method: :get, class: "input-append" do
+            = text_field_tag :query, params[:query], placeholder: "Pesquise por sua cidade", class: "search-form span6"
+            = button_tag "Buscar", class: "btn btn-dark"
+          %p.under Cardápios de restaurantes, pizzarias, lanchonetes, churrascarias na sua cidade.

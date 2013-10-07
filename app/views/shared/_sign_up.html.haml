@@ -1,0 +1,33 @@
+#sign_up.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+    %h3#myModalLabel Registro
+  .modal-body
+    %p Preencha todos os campos abaixo e efetue seu registro
+    .row-registro
+      %form.registro-form.form-horizontal{action: "#", method: "post", name: "registro-form"}
+        .control-group
+          %label.control-label{for: "inputEmail"}
+            Email
+            %span *
+          .controls
+            %input#inputEmail{placeholder: "Seu email", type: "text"}/
+        .control-group
+          %label.control-label{for: "inputSenha"}
+            Senha
+            %span *
+          .controls
+            %input#inputSenha{placeholder: "Sua senha", type: "password"}/
+        .control-group
+          %label.control-label{for: "inputConfirmarSenha"}
+            Confirmar Senha
+            %span *
+          .controls
+            %input#inputConfirmarSenha{placeholder: "Confirme sua senha", type: "password"}/
+        .control-group
+          .controls.submit
+            %a.btn.btn-theme{href: "#"} Registro
+  .modal-footer
+    %p
+      Já possui uma conta?
+      %a{"aria-hidden" => "true", "data-dismiss" => "modal", "data-toggle" => "modal", href: "#sign_in", role: "button"} Faça Login.

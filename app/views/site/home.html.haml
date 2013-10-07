@@ -1,2 +1,33 @@
-%p
-  Test
+.row
+  .span8.city-tab
+    %article.blog-post
+      .post-heading
+        %h3
+          %i.icon-thumbs-up
+          Últimas Recomendações
+    %ul.media-list
+      - 3.times do
+        = render "recommendation"
+    .pagination
+      %ul
+        %li
+          %a{href: "#"} Prev
+        %li
+          %a{href: "#"} 1
+        %li.active
+          %a{href: "#"} 2
+        %li
+          %a{href: "#"} 3
+        %li
+          %a{href: "#"} 4
+        %li
+          %a{href: "#"} Next
+
+  .span4
+    %aside
+      %h4.rheading
+        Últimos cardápios
+        %span
+      .row-fluid
+        - 3.times do
+          = render "recent_restaurant"
