@@ -1,42 +1,42 @@
-#sign_in.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+#sign_in.modal.hide.fade
   .modal-header
-    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-    %h3#myModalLabel Login
+    %button.close{ data: { dismiss: "modal" } } ×
+    %h3 Login
   .modal-body
     .row-login
       %p Acesse com seu cadastro
-      %form.login-form.form-horizontal{action: "#", method: "post", name: "login-form"}
+      = form_for :user, url: user_session_path, html: { class: "login-form form-horizontal" } do |f|
         .control-group
-          %label.control-label{for: "inputEmail"}
+          = f.label :email, class: "control-label" do
             Email
             %span *
           .controls
-            %input#inputEmail{placeholder: "Seu email", type: "text"}/
+            = f.email_field :email, placeholder: "Seu email"
         .control-group
-          %label.control-label{for: "inputSenha"}
+          = f.label :password, class: "control-label" do
             Senha
             %span *
           .controls
-            %input#inputSenha{placeholder: "Sua senha", type: "password"}/
+            = f.password_field :password, placeholder: "Sua senha"
         .control-group
           .controls.submit
-            %a.btn.btn-theme{href: "#"} Entrar
+            = f.submit "Entrar", class: "btn btn-theme"
     .row-social-login
       %p Acesse pelas redes sociais
       %ul.social-signin-group
         %li
-          %a{href: ""}
+          = link_to "#" do
             .social-signin.social-signin-twitter
         %li
-          %a{href: ""}
+          = link_to "#" do
             .social-signin.social-signin-facebook
         %li
-          %a{href: ""}
+          = link_to "#" do
             .social-signin.social-signin-google
   .modal-footer
     %p
       Não possui uma conta?
-      %a{"aria-hidden" => "true", "data-dismiss" => "modal", "data-toggle" => "modal", href: "#sign_up", role: "button"} Registre-se.
+      = link_to "Registre-se", "#sign_up", data: { dismiss: "modal", toggle: "modal" }
       %br/
       Esqueceu sua senha?
-      %a{"aria-hidden" => "true", "data-dismiss" => "modal", "data-toggle" => "modal", href: "#reset_password", role: "button"} Recupere aqui.
+      = link_to "Recupere aqui", "#reset_password", data: { dismiss: "modal", toggle: "modal" }

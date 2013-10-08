@@ -2588,15 +2588,15 @@ img.alignright{
 }
 
 .social-signin-twitter{
-    background: url(../img/social_signin.png) no-repeat -2px 0 ;
+    background: url(social_signin.png) no-repeat -2px 0 ;
 }
 
 .social-signin-facebook{
-    background: url(../img/social_signin.png) no-repeat -2px -34px ;
+    background: url(social_signin.png) no-repeat -2px -34px ;
 }
 
 .social-signin-google{
-    background: url(../img/social_signin.png) no-repeat -2px -68px ;
+    background: url(social_signin.png) no-repeat -2px -68px ;
 }
 
 .row-login{
