@@ -17,9 +17,14 @@
                   %i.icon-lock
                   Registre-se
               %li
-                = link_to "#sign_in", data: { toggle: "modal" } do
-                  %i.icon-signin
-                  Login
+                - if user_signed_in?
+                  = link_to destroy_user_session_path, method: :delete do
+                    %i.icon-signout
+                    Log out
+                - else
+                  = link_to "#sign_in", data: { toggle: "modal" } do
+                    %i.icon-signin
+                    Login
 
 = render "shared/sign_in"
 = render "shared/sign_up"

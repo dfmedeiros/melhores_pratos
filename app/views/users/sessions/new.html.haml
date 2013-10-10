@@ -1,15 +1,57 @@
-%h2 Sign in
-= form_for resource, as: resource_name, url: session_path(resource_name) do |f|
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %div
-    = f.check_box :remember_me
-    = f.label :remember_me
-  %div= f.submit "Sign in"
-= render "users/shared/links"
+.row
+  .span7
+    .span6.features
+      = link_to "#" do
+        %i.icon-circled.icon-48.icon-magic.left.active.icon
+      %h4 Responsive
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus.
+    .span6.features
+      = link_to "#" do
+        %i.icon-circled.icon-48.icon-briefcase.left.icon
+      %h4 Premium support
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus.
+    .span6.features
+      = link_to "#" do
+        %i.icon-circled.icon-48.icon-cogs.left.icon
+      %h4 Valid HTML5
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus.
+  .span5
+    %aside
+      .widget
+        %h4.rheading
+          Login
+          %span
+        .social-icons
+          = link_to "#" do
+            %i.icon-circled.icon-48.icon-twitter.left.active.icon
+          = link_to "#" do
+            %i.icon-circled.icon-48.icon-facebook.left.active.icon
+          = link_to "#" do
+            %i.icon-circled.icon-48.icon-google-plus.left.active.icon
+        %h4.rheading.login-separator
+          %div ou
+        = form_for resource, as: resource_name, url: session_path(resource_name), html: { class: "contact-form sign-form"} do |f|
+          .row-fluid
+            .span12
+              = f.label :email do
+                Email
+                %span *
+              = f.text_field :email, class: "input-block-level", placeholder: "Seu email"
+          .row-fluid
+            .span12
+              = f.label :password do
+                Senha
+                %span *
+              = f.password_field :password, class: "input-block-level", placeholder: "Sua senha"
+
+              = f.button "Entrar", class: "btn btn-theme btn-block"
+        .modal-footer
+          %p
+            Não possui uma conta?
+            = link_to "Registre-se", new_user_registration_path
+            %br/
+            Esqueceu sua senha?
+            = link_to "Recupere aqui", new_user_password_path
