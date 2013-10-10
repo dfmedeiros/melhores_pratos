@@ -7,7 +7,10 @@
   %body
     .wrapper
       = render "layouts/header"
-      = render "layouts/banner"
+      - if controller.action_name == "home"
+        = render "layouts/banner"
+      - else
+        = render "layouts/breadcrumbs"
 
       %section.maincontent
         .container

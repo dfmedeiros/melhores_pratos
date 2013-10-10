@@ -1,17 +1,51 @@
-%h2 Sign up
-= form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
-  = devise_error_messages!
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %div
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %div= f.submit "Sign up"
-= render "users/shared/links"
+.row
+  .span7
+    .span6.features
+      %a{href: "#"}
+        %i.icon-circled.icon-48.icon-magic.left.active.icon
+      %h4 Responsive
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus.
+    .span6.features
+      %a{href: "#"}
+        %i.icon-circled.icon-48.icon-briefcase.left.icon
+      %h4 Premium support
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus.
+    .span6.features
+      %a{href: "#"}
+        %i.icon-circled.icon-48.icon-cogs.left.icon
+      %h4 Valid HTML5
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lacus rhoncus elit egestas luctus.
+  .span5
+    %aside
+      .widget
+        %h4.rheading
+          Cadastre-se
+          %span
+        = form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: "contact-form sign-form"} do |f|
+          = devise_error_messages!
+          .row-fluid
+            .span12
+              = f.label :email do
+                Email
+                %span *
+              = f.text_field :email, placeholder: "Seu email", class: "input-block-level"
+          .row-fluid
+            .span12
+              = f.label :password do
+                Senha
+                %span *
+              = f.password_field :password, placeholder: "Sua senha", class: "input-block-level"
+          .row-fluid
+            .span12
+              = f.label :password_confirmation do
+                Confirmar Senha
+                %span *
+              = f.password_field :password_confirmation, placeholder: "Confirme sua senha", class: "input-block-level"
+              = f.button "Cadastrar", class: "btn btn-theme btn-block"
+        .modal-footer
+          %p
+            Já possui conta?
+            = link_to "Faça Login", new_user_session_path

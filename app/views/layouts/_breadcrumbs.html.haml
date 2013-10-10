@@ -1,0 +1,16 @@
+%section#subintro
+  .container
+    .row
+      .span8
+        %ul.breadcrumb
+          %li
+            = link_to root_path do
+              %i.icon-home
+            %i.icon-angle-right
+          %li.active
+            cadastro
+      .span4
+        .search
+          = form_tag "#", method: :get, class: "input-append" do
+            = text_field_tag :query, params[:query], placeholder: "Cidade, estabelecimento ou prato", class: "search-form"
+            = button_tag "Busca", class: "btn btn-dark"
