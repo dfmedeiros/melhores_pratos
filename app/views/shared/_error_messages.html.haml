@@ -1,0 +1,8 @@
+- if resource.errors.any?
+  .alert.alert-error
+    %button.close{ data: { dismiss: "alert" }}×
+    %h4
+      Erro ao salvar registro.
+    %ul
+      - resource.errors.full_messages.each do |msg|
+        %p= msg

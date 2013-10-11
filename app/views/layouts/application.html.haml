@@ -14,6 +14,7 @@
 
       %section.maincontent
         .container
+          = render "shared/flash_messages"
           = yield
 
       = render "layouts/footer"

@@ -25,7 +25,8 @@
           Cadastre-se
           %span
         = form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: "contact-form sign-form"} do |f|
-          = devise_error_messages!
+          = render "shared/error_messages"
+
           .row-fluid
             .span12
               = f.label :email do
