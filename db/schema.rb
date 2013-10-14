@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131011032638) do
+ActiveRecord::Schema.define(version: 20131013191604) do
 
   create_table "cities", force: true do |t|
     t.string   "name",       default: "", null: false
@@ -19,6 +19,32 @@ ActiveRecord::Schema.define(version: 20131011032638) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "restaurants", force: true do |t|
+    t.string   "name",               default: "", null: false
+    t.text     "description"
+    t.string   "slug",               default: "", null: false
+    t.string   "website"
+    t.string   "avatar"
+    t.string   "zip_code",           default: "", null: false
+    t.string   "street"
+    t.string   "street_number"
+    t.string   "neighborhood",       default: "", null: false
+    t.string   "phone_number"
+    t.string   "extra_phone_number"
+    t.string   "complement"
+    t.float    "latitute"
+    t.float    "longitude"
+    t.boolean  "gmaps"
+    t.integer  "city_id",                         null: false
+    t.integer  "user_id",                         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "restaurants", ["city_id"], name: "index_restaurants_on_city_id", using: :btree
+  add_index "restaurants", ["slug"], name: "index_restaurants_on_slug", unique: true, using: :btree
+  add_index "restaurants", ["user_id"], name: "index_restaurants_on_user_id", using: :btree
 
   create_table "states", force: true do |t|
     t.string   "name",       default: "", null: false

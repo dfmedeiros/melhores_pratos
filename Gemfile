@@ -15,6 +15,11 @@ gem 'devise'
 
 gem 'jbuilder', '~> 1.2'
 
+
+group :development, :test do
+  gem 'pry'
+end
+
 group :doc do
   gem 'sdoc', require: false
 end
