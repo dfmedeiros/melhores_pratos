@@ -1,2 +1,35 @@
-- @restaurants.each do |restaurant|
-  %p= restaurant.name
+.row
+  %article.blog-post
+    .post-heading
+      %h3
+        Meus Estabelecimentos
+        = link_to new_panel_restaurant_path, class: "btn btn-mini btn-theme favorite-menu" do
+          %i.icon-plus-sign
+          Novo Estabelecimento
+  .span12
+    %table.table.table-striped
+      %thead
+        %tr
+          %th
+            %i.icon-picture
+          %th Nome do Estabelecimento
+          %th Recomendações
+          %th Endereço
+          %th.span2 Contato
+          %th.span1 Opções
+      %tbody
+        = render @restaurants
+    .pagination
+      %ul
+        %li
+          %a{href: "#"} Prev
+        %li
+          %a{href: "#"} 1
+        %li.active
+          %a{href: "#"} 2
+        %li
+          %a{href: "#"} 3
+        %li
+          %a{href: "#"} 4
+        %li
+          %a{href: "#"} Next

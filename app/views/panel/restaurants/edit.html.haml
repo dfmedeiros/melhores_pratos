@@ -1,0 +1,8 @@
+.row
+  .span12
+    %article.blog-post
+      .post-heading
+        %h3 Editar Estabelecimento
+    = render "shared/error_messages", resource: @restaurant
+    = form_for @restaurant, url: panel_restaurant_path(@restaurant), html: { method: :put, id: "estabelecimentoform" } do |f|
+      = render "form", f: f

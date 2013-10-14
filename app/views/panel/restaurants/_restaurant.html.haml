@@ -1,0 +1,15 @@
+%tr
+  %td
+    = link_to "#", class: "thumbnail" do
+      = image_tag "avatar-restaurante1.jpg", alt: restaurant.name
+  %td= restaurant.name
+  %td 12
+  %td #{restaurant.neighborhood}, #{restaurant.city.name}
+  %td= restaurant.phone_number
+  %td
+    = link_to edit_panel_restaurant_path(restaurant), class: "btn btn-theme", rel: "tooltip", title: "Editar Cardápio", data: { placement: "right" } do
+      %i.icon-food
+    %br/
+    %br/
+    = link_to edit_panel_restaurant_path(restaurant), class: "btn btn-theme", rel: "tooltip", title: "Configurações", data: { placement: "right" } do
+      %i.icon-cog

@@ -15,7 +15,6 @@ class Panel::RestaurantsController < ApplicationController
 
   def create
     @restaurant = current_user.restaurants.new(restaurant_params)
-    binding.pry
     if @restaurant.save
       redirect_to panel_restaurants_path, notice: "Restaurante criado com sucesso."
     else
@@ -28,9 +27,18 @@ class Panel::RestaurantsController < ApplicationController
   end
 
   def update
+    @restaurant = current_user.restaurants.find(params[:id])
+    if @restaurant.update(restaurant_params)
+      redirect_to panel_restaurants_path, notice: "Restaurante atualizado com sucesso."
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @restaurant = current_user.restaurants.find(params[:id])
+    @restaurant.destroy
+    redirect_to panel_restaurants_path, notice: "Restaurante removido com sucesso."
   end
 
   private
