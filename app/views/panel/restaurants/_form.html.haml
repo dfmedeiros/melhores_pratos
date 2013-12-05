@@ -1,4 +1,7 @@
 %table.central-table-form
+  = hidden_field_tag :latitude
+  = hidden_field_tag :longitude
+
   %tr
     %td{colspan: "2"}
       %h5 Informações Básicas
@@ -23,6 +26,21 @@
       %h5 Informações de Contato
   %tr
     %th
+      = label_tag :address_search, "Buscar Endereço:"
+    %td
+      .control-group
+        .controls
+          = text_field_tag :address_search, nil, class: "span6 cep"
+  %tr
+    %th
+      = label_tag :location, "Localização:"
+    %td
+      .control-group
+        .controls
+          .map-wrapper
+            #map{style: "width:450px; height:450px;"}
+  %tr
+    %th
       = f.label :zip_code, "CEP:"
     %td
       .control-group
@@ -34,7 +52,7 @@
     %td
       .control-group
         .controls
-          = f.text_field :street, class: "span5 margin-right-20", id: "addresspicker_map"
+          = f.text_field :street, class: "span5 margin-right-20"
           = f.text_field :street_number, class: "span1", placeholder: "Nº"
   %tr
     %th
@@ -45,12 +63,25 @@
           = f.text_field :neighborhood, class: "span6"
   %tr
     %th
+      = label_tag :city, "Cidade:"
+    %td
+      .control-group
+        .controls
+          = text_field_tag :city, nil, class: "span6"
+  %tr
+    %th
+      = label_tag :state, "Estado:"
+    %td
+      .control-group
+        .controls
+          = text_field_tag :state, nil, class: "span6"
+  %tr
+    %th
       = f.label :complement, "Complemento:"
     %td
       .control-group
         .controls
           = f.text_field :complement, class: "span6"
-
   %tr
     %th
       = f.label :phone_number, "Telefones:"
@@ -59,37 +90,6 @@
         .controls
           = f.text_field :phone_number, class: "span3 phone margin-right-20"
           = f.text_field :extra_phone_number, class: "span3 phone"
-  %tr
-    %th
-      = label_tag :location, "Localização:"
-    %td
-      #callback_result
-        = text_area_tag :callback_result, nil, id: "callback_result"
-
-      .map-wrapper
-        #map{style: "width:300px; height:300px;"}
-
-      %label Locality:
-      %input#locality{disabled: "disabled"}/
-      %br/
-      %label Sublocality:
-      %input#sublocality{disabled: "disabled"}/
-      %br/
-      %label Route:
-      %input#route{disabled: "disabled"}/
-      %br/
-      %label State/Province:
-      %input#administrative_area_level_1{disabled: "disabled"}/
-      %br/
-      %label Postal Code:
-      %input#postal_code{disabled: "disabled"}/
-      %br/
-      %label Lat:
-      %input#lat{disabled: "disabled"}/
-      %br/
-      %label Lng:
-      %input#lng{disabled: "disabled"}/
-      %br/
   %tr
     %td{colspan: "2"}
       %h5 Detalhes do Estabelecimento

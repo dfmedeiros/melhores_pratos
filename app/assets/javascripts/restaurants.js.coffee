@@ -1,24 +1,20 @@
 $ ->
-  addresspickerMap = $("#addresspicker_map").addresspicker
+  addresspickerMap = $("#address_search").addresspicker
     regionBias: "BR",
-    updateCallback: showCallback,
+    appendAddressString: ", BR"
     elements:
-      map:      "#map",
-      lat:      "#lat",
-      lng:      "#lng",
+      map: "#map",
+      lat: "#latitude",
+      lng: "#longitude",
       street_number: '#street_number',
-      route: '#route',
-      locality: '#locality',
-      sublocality: '#sublocality',
-      administrative_area_level_1: '#administrative_area_level_1',
-      postal_code: '#postal_code'
+      route: '#restaurant_street',
+      locality: '#city',
+      sublocality: '#restaurant_neighborhood',
+      administrative_area_level_1: '#state',
+      postal_code: '#restaurant_zip_code'
 
   gmarker = addresspickerMap.addresspicker("marker")
   gmarker.setVisible(true)
-  addresspickerMap.addresspicker( "updatePosition")
+  addresspickerMap.addresspicker("updatePosition")
 
-  $("#addresspicker_map").addresspicker("option", "reverseGeocode", true)
-
-  showCallback = (geocodeResult, parsedGeocodeResult) ->
-    console.log parsedGeocodeResult
-    $('#callback_result').text(JSON.stringify(parsedGeocodeResult, null, 4))
+  $("#address_search").addresspicker("option", "reverseGeocode", true)
