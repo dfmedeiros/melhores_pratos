@@ -2,6 +2,7 @@ $ ->
   addresspickerMap = $("#address_search").addresspicker
     regionBias: "BR",
     appendAddressString: ", BR"
+    reverseGeocode: true
     elements:
       map: "#map",
       lat: "#latitude",
@@ -16,5 +17,3 @@ $ ->
   gmarker = addresspickerMap.addresspicker("marker")
   gmarker.setVisible(true)
   addresspickerMap.addresspicker("updatePosition")
-
-  $("#address_search").addresspicker("option", "reverseGeocode", true)
