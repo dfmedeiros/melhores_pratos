@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20131013191604) do
     t.datetime "updated_at"
   end
 
+  add_index "cities", ["state_id"], name: "index_cities_on_state_id", using: :btree
+
   create_table "restaurants", force: true do |t|
     t.string   "name",               default: "", null: false
     t.text     "description"
