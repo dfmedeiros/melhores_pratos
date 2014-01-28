@@ -8,20 +8,43 @@
         .navigation
           %nav
             %ul.nav.topnav
-              %li
-                = link_to "#" do
-                  %i.icon-food
-                  Publicar Cardápio
-              %li
-                = link_to "#sign_up", data: { toggle: "modal" } do
-                  %i.icon-lock
-                  Registre-se
-              %li
-                - if user_signed_in?
-                  = link_to destroy_user_session_path, method: :delete do
-                    %i.icon-signout
-                    Log out
-                - else
+              - if user_signed_in?
+                %li.dropdown
+                  = link_to "#" do
+                    = image_tag "avatar-usuario-thumb.jpg", class: "img-rounded"
+                    = current_user.email
+                    %i.icon-angle-down
+                  %ul.dropdown-menu
+                    %li
+                      = link_to "#" do
+                        %i.icon-user
+                        Perfil
+                    %li
+                      = link_to "#" do
+                        %i.icon-food
+                        Publicar Cardápio
+                    %li
+                      = link_to "#" do
+                        %i.icon-food
+                        Meus Estabelecimentos
+                    %li
+                      = link_to "#" do
+                        %i.icon-cog
+                        Configurações
+                    %li
+                      = link_to destroy_user_session_path, method: :delete do
+                        %i.icon-signout
+                        Sair
+              - else
+                %li
+                  = link_to "#" do
+                    %i.icon-food
+                    Publicar Cardápio
+                %li
+                  = link_to "#sign_up", data: { toggle: "modal" } do
+                    %i.icon-lock
+                    Registre-se
+                %li
                   = link_to "#sign_in", data: { toggle: "modal" } do
                     %i.icon-signin
                     Login
