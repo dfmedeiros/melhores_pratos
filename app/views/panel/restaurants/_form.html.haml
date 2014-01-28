@@ -26,21 +26,6 @@
       %h5 Informações de Contato
   %tr
     %th
-      = label_tag :address_search, "Buscar Endereço:"
-    %td
-      .control-group
-        .controls
-          = text_field_tag :address_search, nil, class: "span6 cep"
-  %tr
-    %th
-      = label_tag :location, "Localização:"
-    %td
-      .control-group
-        .controls
-          .map-wrapper
-            #map{style: "width:450px; height:450px;"}
-  %tr
-    %th
       = f.label :zip_code, "CEP:"
     %td
       .control-group
