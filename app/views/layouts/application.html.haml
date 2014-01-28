@@ -2,7 +2,7 @@
 %html
   %head
     %title Melhores Pratos
-    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag "application", media: "all"
     = csrf_meta_tags
   %body
     .wrapper
@@ -22,7 +22,5 @@
     = link_to "#", class: "scrollup" do
       %i.icon-chevron-up.icon-square.icon-48.active
 
-
-    = javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false"
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "application"
 
