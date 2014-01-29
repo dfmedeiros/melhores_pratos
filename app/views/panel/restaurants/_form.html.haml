@@ -59,14 +59,14 @@
     %td
       .control-group
         .controls
-          = select_tag :state, options_from_collection_for_select(State.all, :id, :acronym), class: "span6"
+          = select_tag :state, options_for_select(State.all.map{ |s| [s.name, s.id, { data: { acronym: s.acronym } } ] }, f.object.try(:city).try(:state_id)), include_blank: true, class: "span6"
   %tr
     %th
       = label_tag :city, "Cidade:"
     %td
       .control-group
         .controls
-          = f.select :city_id, options_from_collection_for_select(City.all, :id, :name, @restaurant.city_id), { include_blank: true }, class: "span6"
+          = f.select :city_id, options_from_collection_for_select(City.all, :id, :name, f.object.city_id), {include_blank: true}, class: "span6"
   %tr
     %th
       = f.label :phone_number, "Telefones:"

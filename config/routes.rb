@@ -4,6 +4,7 @@ MelhoresPratos::Application.routes.draw do
   end
 
   resources :addresses
+  resources :cities
 
   devise_for :users
 
