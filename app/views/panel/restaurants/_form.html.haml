@@ -31,6 +31,8 @@
       .control-group
         .controls
           = f.text_field :zip_code, class: "span6 cep"
+          %span.help-inline
+            = link_to "Não sabe ceu CEP? Clique aqui", "http://www.buscacep.correios.com.br/", target: :blank
   %tr
     %th
       = f.label :street, "Endereço:"
