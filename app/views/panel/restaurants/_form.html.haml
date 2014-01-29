@@ -48,25 +48,25 @@
           = f.text_field :neighborhood, class: "span6"
   %tr
     %th
-      = label_tag :city, "Cidade:"
+      = f.label :complement, "Complemento:"
     %td
       .control-group
         .controls
-          = text_field_tag :city, nil, class: "span6"
+          = f.text_field :complement, class: "span6"
   %tr
     %th
       = label_tag :state, "Estado:"
     %td
       .control-group
         .controls
-          = text_field_tag :state, nil, class: "span6"
+          = select_tag :state, options_from_collection_for_select(State.all, :id, :acronym), class: "span6"
   %tr
     %th
-      = f.label :complement, "Complemento:"
+      = label_tag :city, "Cidade:"
     %td
       .control-group
         .controls
-          = f.text_field :complement, class: "span6"
+          = f.select :city_id, options_from_collection_for_select(City.all, :id, :name, @restaurant.city_id), { include_blank: true }, class: "span6"
   %tr
     %th
       = f.label :phone_number, "Telefones:"
