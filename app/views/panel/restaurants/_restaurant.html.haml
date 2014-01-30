@@ -1,7 +1,7 @@
 %tr
   %td
     = link_to "#", class: "thumbnail" do
-      = image_tag "avatar-restaurante1.jpg", alt: restaurant.name
+      = image_tag restaurant.logo_url, alt: restaurant.name
   %td= restaurant.name
   %td 12
   %td #{restaurant.neighborhood}, #{restaurant.city.name}

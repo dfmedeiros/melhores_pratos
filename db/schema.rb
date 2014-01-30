@@ -26,11 +26,11 @@ ActiveRecord::Schema.define(version: 20131013191604) do
     t.string   "name",               default: "", null: false
     t.text     "description"
     t.string   "slug",               default: "", null: false
+    t.string   "logo"
     t.string   "website"
-    t.string   "avatar"
     t.string   "zip_code",           default: "", null: false
-    t.string   "street"
-    t.string   "street_number"
+    t.string   "street",             default: "", null: false
+    t.string   "street_number",      default: "", null: false
     t.string   "neighborhood",       default: "", null: false
     t.string   "phone_number"
     t.string   "extra_phone_number"

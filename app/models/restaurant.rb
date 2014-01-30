@@ -1,5 +1,7 @@
 class Restaurant < ActiveRecord::Base
 
+  mount_uploader :logo, LogoUploader
+
   belongs_to :city
   belongs_to :user
 
@@ -10,6 +12,5 @@ class Restaurant < ActiveRecord::Base
   validates :street_number, presence: true
   validates :neighborhood, presence: true
   validates :city, presence: true
-  validates :phone_number, presence: true
 
 end

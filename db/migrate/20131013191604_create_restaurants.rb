@@ -4,11 +4,11 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :name, null: false, default: ""
       t.text :description
       t.string :slug, null: false, default: ""
+      t.string :logo
       t.string :website
-      t.string :avatar
       t.string :zip_code, null: false, default: ""
-      t.string :street
-      t.string :street_number
+      t.string :street, null: false, default: ""
+      t.string :street_number, null: false, default: ""
       t.string :neighborhood, null: false, default: ""
       t.string :phone_number
       t.string :extra_phone_number

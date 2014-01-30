@@ -82,13 +82,6 @@
       %h5 Detalhes do Estabelecimento
   %tr
     %th
-      = label_tag :types, "Tipo de Estabelecimento:"
-    %td
-      .control-group
-        .controls
-          %input#prato-tipo.span6{name: "tipo", type: "text"}/
-  %tr
-    %th
       = f.label :description, "Descrição:"
     %td
       .control-group
@@ -101,7 +94,7 @@
       .control-group
         .controls
           %span.prettyFile
-            %input{multiple: "multiple", name: "form[files][]", type: "file"}/
+            = f.file_field :logo
             .input-append
               %input.input-large{type: "text"}/
               %a.btn{href: "#"} Escolher Arquivo

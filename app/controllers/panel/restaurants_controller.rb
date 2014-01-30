@@ -47,6 +47,6 @@ class Panel::RestaurantsController < ApplicationController
     params
       .require(:restaurant)
       .permit(:name, :slug, :zip_code, :street, :street_number, :neighborhood, :complement, :city_id,
-        :description, :phone_number, :extra_phone_number)
+        :description, :phone_number, :extra_phone_number, :logo)
   end
 end
