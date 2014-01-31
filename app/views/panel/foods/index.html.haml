@@ -1,0 +1,312 @@
+.row
+  / Últimas Recomendações
+  .span12
+    %article.blog-post
+      .post-heading
+        %h3 Editar Cardápio
+    %ul.media-list.mo-border-bottom
+      %li.media
+        %a.pull-left.thumbnail{href: "#"}
+          %img.media-object{alt: "Penélope Barbosa", "data-content" => "<strong>Total de Recomendações: </strong> 132 <br /> <strong>Membro desde: </strong> 13 de Janeiro de 2012 <br /> <strong>Cidade: </strong> João Pessoa", "data-original-title" => "<img src='assets/img/avatar-usuario-thumb.jpg' /> <strong>Penélope Barbosa</strong>", "data-rel" => "popover", src: @restaurant.logo_url, width: 120, height: 95}/
+        .media-body
+          %h5.media-heading
+            = link_to @restaurant.name
+          %p
+            = @restaurant.description
+          %ul#0002.post-meta.comments
+            %li.first
+              %i.icon-map-marker
+              = @restaurant.street
+            %li.last
+              %span
+                %i.icon-phone>
+                = @restaurant.phone_number
+              %br/
+  .span4
+    %aside
+      .widget
+        %h4.rheading
+          Categorias
+          %span
+        %ul#categoria-sortable.side-list
+          %li
+            Carnes (10)
+          %li
+            Pizzas (12)
+        %form#categoriaform{action: "cadastrarcategoria", method: "post", name: "categoriaform"}
+          %label Nome da Categoria:
+          %input{name: "nome_categoria", type: "text"}/
+          %label Descrição:
+          %textarea{name: "descricao_categoria"}
+          %button.btn.btn-large.btn-block.btn-theme
+            %i.icon-plus-sign>
+            Adicionar Categoria
+  .span8
+    %article.blog-post
+      .post-heading
+        %h3
+          Pratos
+          %i.icon-chevron-right{style: "font-size:18px"}
+          Petiscos
+    %ul.media-list.media-list-sub-item
+      %li.media
+        .media-body
+          / Nested media object
+          .media
+            %a.pull-left{href: "#"}
+              %img.media-object.img-polaroid{alt: "", src: "assets/img/avatar-prato.jpg"}/
+            .media-body
+              %h5.media-heading
+                %a{href: "#"} Macarrão Alho e óleo
+                .right-buttons
+                  %small
+                    %a{href: ""} Editar
+                    |
+                    %a{href: ""} Apagar
+              %p
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+              %ul#0001.post-meta.best
+                %li.first
+                  %i.icon-chevron-down
+                  %span
+                    %a{href: "#"} 12 usuários recomendam
+              / Nested media object
+              .clearfix
+              #best-dish-0001.media-noborder.best-dish
+                %ul.thumbnails
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                %br/
+                .clearfix
+                %ul#0001.post-meta.comments
+                  %li.first
+                    %span 2 comentários
+                  %li.last
+                    %a{href: ""} Ver todos
+                .clearfix
+                #comments-dish-0001.media-noborder.comments-dish
+                  %ul.media-list
+                    %li.media-borderbottom
+                      %a.pull-left.thumbnail{href: "#"}
+                        %img.media-object{alt: "Penélope Barbosa", "data-content" => "<strong>Total de Recomendações: </strong> 132 <br /> <strong>Membro desde: </strong> 13 de Janeiro de 2012 <br /> <strong>Cidade: </strong> João Pessoa", "data-original-title" => "<img src='assets/img/avatar-usuario-thumb.jpg' /> <strong>Penélope Barbosa</strong>", "data-rel" => "popover", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                      .media-body
+                        %h5.media-heading
+                          %a{href: "#"} Mike sullivan
+                          %span 3 March, 2013
+                        %p
+                          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    %li.media-borderbottom
+                      %a.pull-left.thumbnail{href: "#"}
+                        %img.media-object{alt: "Penélope Barbosa", "data-content" => "<strong>Total de Recomendações: </strong> 132 <br /> <strong>Membro desde: </strong> 13 de Janeiro de 2012 <br /> <strong>Cidade: </strong> João Pessoa", "data-original-title" => "<img src='assets/img/avatar-usuario-thumb.jpg' /> <strong>Penélope Barbosa</strong>", "data-rel" => "popover", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                      .media-body
+                        %h5.media-heading
+                          %a{href: "#"} Mike sullivan
+                          %span 3 March, 2013
+                        %p
+                          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+      %li.media
+        .media-body
+          /
+            <h5 class="media-heading"><a href="#">Penélope Barbosa</a> <span>3 March, 2013</span></h5>
+            <p>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+            </p-
+          / Nested media object
+          .media
+            %a.pull-left{href: "#"}
+              %img.media-object.img-polaroid{alt: "", src: "assets/img/avatar-prato.jpg"}/
+            .media-body
+              %h5.media-heading
+                %a{href: "#"} Macarrão Alho e óleo
+                .right-buttons
+                  %small
+                    %a{href: ""} Editar
+                    |
+                    %a{href: ""} Apagar
+              %p
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+              %ul#0002.post-meta.best
+                %li.first
+                  %i.icon-chevron-down
+                  %span
+                    %a{href: "#"} 12 usuários recomendam
+              / Nested media object
+              .clearfix
+              #best-dish-0002.media-noborder.best-dish
+                %ul.thumbnails
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                  %li
+                    %a.thumbnail{href: "#"}
+                      %img{alt: "", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                %br/
+                .clearfix
+                %ul#0002.post-meta.comments
+                  %li.first
+                    %span 2 comentários
+                  %li.last
+                    %a{href: ""} Ver todos
+                .clearfix
+                #comments-dish-0002.media-noborder.comments-dish
+                  %ul.media-list
+                    %li.media-borderbottom
+                      %a.pull-left.thumbnail{href: "#"}
+                        %img.media-object{alt: "Penélope Barbosa", "data-content" => "<strong>Total de Recomendações: </strong> 132 <br /> <strong>Membro desde: </strong> 13 de Janeiro de 2012 <br /> <strong>Cidade: </strong> João Pessoa", "data-original-title" => "<img src='assets/img/avatar-usuario-thumb.jpg' /> <strong>Penélope Barbosa</strong>", "data-rel" => "popover", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                      .media-body
+                        %h5.media-heading
+                          %a{href: "#"} Mike sullivan
+                          %span 3 March, 2013
+                        %p
+                          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                    %li.media-borderbottom
+                      %a.pull-left.thumbnail{href: "#"}
+                        %img.media-object{alt: "Penélope Barbosa", "data-content" => "<strong>Total de Recomendações: </strong> 132 <br /> <strong>Membro desde: </strong> 13 de Janeiro de 2012 <br /> <strong>Cidade: </strong> João Pessoa", "data-original-title" => "<img src='assets/img/avatar-usuario-thumb.jpg' /> <strong>Penélope Barbosa</strong>", "data-rel" => "popover", src: "assets/img/avatar-usuario-thumb.jpg"}/
+                      .media-body
+                        %h5.media-heading
+                          %a{href: "#"} Mike sullivan
+                          %span 3 March, 2013
+                        %p
+                          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+    %form#pratoform{action: "cadastrarprato", method: "post", name: "pratoform"}
+      %table.central-table-form
+        %tr
+          %th
+            %label Nome do Prato:
+          %td
+            %input.span6{name: "nome_prato", type: "text"}/
+        %tr
+          %th
+          %td
+            %p.custom-check
+              %input#especialidade{name: "especialidade", type: "checkbox", value: "true"}/
+              %label{for: "especialidade"} Este prato é uma especialidade da casa
+        %tr
+          %th
+            %label Descrição:
+          %td
+            %textarea.span6{name: "descricao"}
+        %tr
+          %th
+            %label Imagem:
+          %td
+            %span.prettyFile
+              %input{multiple: "multiple", name: "form[files][]", type: "file"}/
+              .input-append
+                %input.input-large{type: "text"}/
+                %a.btn{href: "#"} Escolher Arquivo
+        %tr
+          %th
+            %label Cozinhas:
+          %td
+            %input#prato-cozinhas.span6{name: "cozinhas", type: "text"}/
+        %tr
+          %th
+            %label Tipo:
+          %td
+            %input#prato-tipo.span6{name: "tipo", type: "text"}/
+        %tr
+          %th
+            %label Preço:
+          %td
+            %fieldset
+              %p.custom-check
+                %input.custom-radio{name: "preco_fixo", type: "radio"}/
+                %label{for: "preco_fixo"} Este prato possui um preço fixo
+              %br/
+              %input{name: "preco", type: "text"}/
+              %br/
+              %br/
+              %p.custom-check
+                %input.custom-radio{name: "preco_fixo", type: "radio"}/
+                %label{for: "preco_fixo"} Este prato possui um preço que varia conforme quantidade, tamanho, ingredientes, etc.
+              %table
+                %tr
+                  %td Descrição
+                  %td Preço
+                %tr
+                  %td
+                    %input{name: "descricao_1", type: "text"}/
+                  %td
+                    .input-prepend
+                      %span.add-on R$
+                      %input#valor_1.span2{name: "valor_1", type: "text"}/
+                %tr
+                  %td
+                    %button.btn
+                      %i.icon-plus-sign
+                      Adcionar Preço
+                  %td
+        %tr
+          %th
+          %td
+            %br/
+            %br/
+            %button.btn.btn-large.btn-block.btn-theme
+              %i.icon-plus-sign>
+              Adicionar Prato
+  / Últimas Recomendações

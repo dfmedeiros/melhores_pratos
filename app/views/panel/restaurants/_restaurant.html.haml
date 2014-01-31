@@ -7,7 +7,7 @@
   %td #{restaurant.neighborhood}, #{restaurant.city.name}
   %td= restaurant.phone_number
   %td
-    = link_to edit_panel_restaurant_path(restaurant), class: "btn btn-theme", rel: "tooltip", title: "Editar Cardápio", data: { placement: "right" } do
+    = link_to panel_restaurant_foods_path(restaurant), class: "btn btn-theme", rel: "tooltip", title: "Editar Cardápio", data: { placement: "right" } do
       %i.icon-food
     %br/
     %br/
