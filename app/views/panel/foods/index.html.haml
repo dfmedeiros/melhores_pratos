@@ -29,18 +29,14 @@
           Categorias
           %span
         %ul#categoria-sortable.side-list
-          %li
-            Carnes (10)
-          %li
-            Pizzas (12)
-        %form#categoriaform{action: "cadastrarcategoria", method: "post", name: "categoriaform"}
-          %label Nome da Categoria:
-          %input{name: "nome_categoria", type: "text"}/
-          %label Descrição:
-          %textarea{name: "descricao_categoria"}
-          %button.btn.btn-large.btn-block.btn-theme
-            %i.icon-plus-sign>
-            Adicionar Categoria
+          - @menu_categories.each do |category|
+            - unless category.new_record?
+              %li
+                = "#{category.name} (10)"
+        = render "shared/error_messages", resource: @menu_category
+        = form_for @menu_category, url: panel_restaurant_menu_categories_path, html: { id: "categoriaform" } do |f|
+          = render "panel/menu_categories/form", f: f
+
   .span8
     %article.blog-post
       .post-heading

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131013191604) do
+ActiveRecord::Schema.define(version: 20140131012714) do
 
   create_table "cities", force: true do |t|
     t.string   "name",       default: "", null: false
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20131013191604) do
   end
 
   add_index "cities", ["state_id"], name: "index_cities_on_state_id", using: :btree
+
+  create_table "menu_categories", force: true do |t|
+    t.string   "name",          default: "", null: false
+    t.text     "description"
+    t.integer  "restaurant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "menu_categories", ["restaurant_id"], name: "index_menu_categories_on_restaurant_id", using: :btree
 
   create_table "restaurants", force: true do |t|
     t.string   "name",               default: "", null: false

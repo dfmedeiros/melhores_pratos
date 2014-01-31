@@ -2,6 +2,7 @@ MelhoresPratos::Application.routes.draw do
   namespace :panel do
     resources :restaurants do
       resources :foods
+      resources :menu_categories
     end
   end
 
