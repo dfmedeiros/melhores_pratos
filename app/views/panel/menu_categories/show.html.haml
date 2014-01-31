@@ -42,10 +42,10 @@
     %article.blog-post
       .post-heading
         %h3
-          Todos os Pratos
+          Pratos
+          %i.icon-chevron-right{style: "font-size:18px"}
+          = @menu_category.name
     %ul.media-list.media-list-sub-item
-      - 2.times do
-        = render "panel/foods/food"
+      = render "panel/foods/food"
 
     = render "panel/foods/form"
-  / Últimas Recomendações

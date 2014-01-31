@@ -1,0 +1,77 @@
+%form#pratoform{action: "cadastrarprato", method: "post", name: "pratoform"}
+  %table.central-table-form
+    %tr
+      %th
+        %label Nome do Prato:
+      %td
+        %input.span6{name: "nome_prato", type: "text"}/
+    %tr
+      %th
+      %td
+        %p.custom-check
+          %input#especialidade{name: "especialidade", type: "checkbox", value: "true"}/
+          %label{for: "especialidade"} Este prato é uma especialidade da casa
+    %tr
+      %th
+        %label Descrição:
+      %td
+        %textarea.span6{name: "descricao"}
+    %tr
+      %th
+        %label Imagem:
+      %td
+        %span.prettyFile
+          %input{multiple: "multiple", name: "form[files][]", type: "file"}/
+          .input-append
+            %input.input-large{type: "text"}/
+            %a.btn{href: "#"} Escolher Arquivo
+    %tr
+      %th
+        %label Cozinhas:
+      %td
+        %input#prato-cozinhas.span6{name: "cozinhas", type: "text"}/
+    %tr
+      %th
+        %label Tipo:
+      %td
+        %input#prato-tipo.span6{name: "tipo", type: "text"}/
+    %tr
+      %th
+        %label Preço:
+      %td
+        %fieldset
+          %p.custom-check
+            %input.custom-radio{name: "preco_fixo", type: "radio"}/
+            %label{for: "preco_fixo"} Este prato possui um preço fixo
+          %br/
+          %input{name: "preco", type: "text"}/
+          %br/
+          %br/
+          %p.custom-check
+            %input.custom-radio{name: "preco_fixo", type: "radio"}/
+            %label{for: "preco_fixo"} Este prato possui um preço que varia conforme quantidade, tamanho, ingredientes, etc.
+          %table
+            %tr
+              %td Descrição
+              %td Preço
+            %tr
+              %td
+                %input{name: "descricao_1", type: "text"}/
+              %td
+                .input-prepend
+                  %span.add-on R$
+                  %input#valor_1.span2{name: "valor_1", type: "text"}/
+            %tr
+              %td
+                %button.btn
+                  %i.icon-plus-sign
+                  Adcionar Preço
+              %td
+    %tr
+      %th
+      %td
+        %br/
+        %br/
+        %button.btn.btn-large.btn-block.btn-theme
+          %i.icon-plus-sign>
+          Adicionar Prato

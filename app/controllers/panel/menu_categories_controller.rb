@@ -2,10 +2,14 @@ class Panel::MenuCategoriesController < ApplicationController
 
   before_filter :load_variables
 
+  def show
+    @menu_category = @restaurant.menu_categories.find(params[:id])
+  end
+
   def create
     @menu_category = @restaurant.menu_categories.new(menu_category_params)
     if @menu_category.save
-      redirect_to panel_restaurant_foods_path(@restaurant), notice: "Categoria criada com sucesso."
+      redirect_to panel_restaurant_menu_category_path(@restaurant, @menu_category), notice: "Categoria criada com sucesso."
     else
       render "panel/foods/index"
     end
