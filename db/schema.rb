@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140203233923) do
   create_table "menu_categories", force: true do |t|
     t.string   "name",          default: "", null: false
     t.text     "description"
+    t.integer  "foods_count",   default: 0
     t.integer  "restaurant_id"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -6,6 +6,7 @@ class Panel::MenuCategoriesController < ApplicationController
     @new_category = @restaurant.menu_categories.new
     @menu_category = @restaurant.menu_categories.find(params[:id])
     @foods = @menu_category.foods
+    @food = @menu_category.foods.new
   end
 
   def create

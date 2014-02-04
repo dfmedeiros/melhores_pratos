@@ -29,11 +29,11 @@
           Categorias
           %span
         %ul#categoria-sortable.side-list
-          %li= link_to "Todos os pratos (30)", panel_restaurant_foods_path(@restaurant)
+          %li= link_to "Todos os pratos (#{@restaurant.foods.count})", panel_restaurant_foods_path(@restaurant)
           - @menu_categories.each do |category|
             - unless category.new_record?
               %li
-                = link_to "#{category.name} (10)", panel_restaurant_menu_category_path(@restaurant, category)
+                = link_to "#{category.name} (#{category.foods_count})", panel_restaurant_menu_category_path(@restaurant, category)
         = render "shared/error_messages", resource: @new_category
         = form_for @new_category, url: panel_restaurant_menu_categories_path, html: { id: "categoriaform" } do |f|
           = render "panel/menu_categories/form", f: f
@@ -46,6 +46,6 @@
           %i.icon-chevron-right{style: "font-size:18px"}
           = @menu_category.name
     %ul.media-list.media-list-sub-item
-      = render "panel/foods/food"
+      = render partial: "panel/foods/food", collection: @foods, as: :food
 
     = render "panel/foods/form"
