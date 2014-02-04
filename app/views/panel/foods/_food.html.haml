@@ -6,14 +6,14 @@
         = image_tag "avatar-prato.jpg", alt: "", class: "media-object img-polaroid"
       .media-body
         %h5.media-heading
-          %a{href: "#"} Macarrão Alho e óleo
+          %a{href: "#"}= food.name
           .right-buttons
             %small
               %a{href: ""} Editar
               |
               %a{href: ""} Apagar
         %p
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+          = food.description
         %ul#0001.post-meta.best
           %li.first
             %i.icon-chevron-down

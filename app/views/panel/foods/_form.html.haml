@@ -1,27 +1,27 @@
-%form#pratoform{action: "cadastrarprato", method: "post", name: "pratoform"}
+= form_for @food, url: panel_restaurant_foods_path(@restaurant), id: "pratoform" do |f|
   %table.central-table-form
     %tr
       %th
-        %label Nome do Prato:
+        = f.label :name, "Nome do Prato"
       %td
-        %input.span6{name: "nome_prato", type: "text"}/
+        = f.text_field :name, class: "span6"
     %tr
       %th
       %td
         %p.custom-check
-          %input#especialidade{name: "especialidade", type: "checkbox", value: "true"}/
-          %label{for: "especialidade"} Este prato é uma especialidade da casa
+          = f.check_box :special
+          = f.label :special, "Esse prato é uma especialidade da casa"
     %tr
       %th
-        %label Descrição:
+        = f.label :description, "Descrição"
       %td
-        %textarea.span6{name: "descricao"}
+        = f.text_area :description, class: "span6"
     %tr
       %th
         %label Imagem:
       %td
         %span.prettyFile
-          %input{multiple: "multiple", name: "form[files][]", type: "file"}/
+          = f.file_field :photo
           .input-append
             %input.input-large{type: "text"}/
             %a.btn{href: "#"} Escolher Arquivo
@@ -32,9 +32,9 @@
         %input#prato-cozinhas.span6{name: "cozinhas", type: "text"}/
     %tr
       %th
-        %label Tipo:
+        = f.label :menu_category_id, "Categoria"
       %td
-        %input#prato-tipo.span6{name: "tipo", type: "text"}/
+        = f.select :menu_category_id, options_from_collection_for_select(@menu_categories, :id, :name, f.object.menu_category_id), { include_blank: true }, class: "span6"
     %tr
       %th
         %label Preço:

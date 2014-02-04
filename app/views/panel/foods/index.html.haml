@@ -35,7 +35,7 @@
               %li
                 = link_to "#{category.name} (10)", panel_restaurant_menu_category_path(@restaurant, category)
         = render "shared/error_messages", resource: @menu_category
-        = form_for @menu_category, url: panel_restaurant_menu_categories_path, html: { id: "categoriaform" } do |f|
+        = form_for :menu_category, url: panel_restaurant_menu_categories_path, html: { id: "categoriaform" } do |f|
           = render "panel/menu_categories/form", f: f
 
   .span8
@@ -44,8 +44,6 @@
         %h3
           Todos os Pratos
     %ul.media-list.media-list-sub-item
-      - 2.times do
-        = render "panel/foods/food"
+      = render partial: "panel/foods/food", collection: @foods
 
     = render "panel/foods/form"
-  / Últimas Recomendações

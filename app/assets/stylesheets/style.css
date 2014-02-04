@@ -2902,3 +2902,51 @@ h4.login-separator div{
 #error-explanation h4 {
     margin-bottom: 10px;
 }
+
+.custom-check input{
+    float: left;
+}
+
+.custom-check label{
+    float: left;
+    width: 300px;
+    margin-left: 5px;
+}
+
+.filter-preco{
+    width: 50px !important;
+
+}
+
+.no-margin-left{
+    margin-left: 0 !important;
+
+}
+
+.expansible-window{
+    width: 600px;
+    background:  url(../img/arrow.png) no-repeat 5px 5px;
+    position: absolute;
+    margin: 0 0 20px 300px;
+    display:none;
+}
+
+.expansible-window-wrapper{
+    float: right;
+    width: 560px;
+    padding: 20px 10px;
+    background: #A52625 url(../img/arrow.png) no-repeat 0px;
+
+}
+
+.expansible-window-wrapper a{
+    color: #FFF !important;
+}
+
+#ew02{
+    margin-top: 100px;
+}
+
+#ew03{
+    margin-top: 130px;
+}

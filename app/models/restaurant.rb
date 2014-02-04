@@ -5,6 +5,7 @@ class Restaurant < ActiveRecord::Base
   belongs_to :city
   belongs_to :user
   has_many :menu_categories
+  has_many :foods, through: :menu_categories
 
   validates :name, presence: true
   validates :slug, presence: true, uniqueness: true

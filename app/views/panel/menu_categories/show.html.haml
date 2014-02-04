@@ -34,8 +34,8 @@
             - unless category.new_record?
               %li
                 = link_to "#{category.name} (10)", panel_restaurant_menu_category_path(@restaurant, category)
-        = render "shared/error_messages", resource: @menu_category
-        = form_for @menu_category, url: panel_restaurant_menu_categories_path, html: { id: "categoriaform" } do |f|
+        = render "shared/error_messages", resource: @new_category
+        = form_for @new_category, url: panel_restaurant_menu_categories_path, html: { id: "categoriaform" } do |f|
           = render "panel/menu_categories/form", f: f
 
   .span8
