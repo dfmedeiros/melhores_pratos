@@ -17,6 +17,13 @@ class Panel::FoodsController < ApplicationController
     end
   end
 
+  def destroy
+    @food = @restaurant.foods.find(params[:id])
+    @food.destroy
+
+    redirect_to panel_restaurant_foods_path(@restaurant), notice: "Prato removido com sucesso"
+  end
+
   private
 
   def load_variables
