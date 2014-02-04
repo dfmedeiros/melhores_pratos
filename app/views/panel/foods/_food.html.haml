@@ -4,7 +4,7 @@
       / Nested media object
       .media
         %a.pull-left{href: "#"}
-          = image_tag "avatar-prato.jpg", alt: "", class: "media-object img-polaroid"
+          = image_tag food.photo_url, alt: "", class: "media-object img-polaroid", size: "55x55"
         .media-body
           %h5.media-heading
             %a{href: "#"}= food.name
