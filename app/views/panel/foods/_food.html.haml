@@ -1,90 +1,89 @@
-- unless food.new_record?
-  %li.media
-    .media-body
-      / Nested media object
-      .media
-        %a.pull-left{href: "#"}
-          = image_tag food.photo_url, alt: "", class: "media-object img-polaroid", size: "55x55"
-        .media-body
-          %h5.media-heading
-            %a{href: "#"}= food.name
-            .right-buttons
-              %small
-                %a{href: ""} Editar
-                |
-                = link_to "Apagar", panel_restaurant_food_path(@restaurant.id, food.id), method: :delete
-          %p
-            = food.description
-          %ul#0001.post-meta.best
-            %li.first
-              %i.icon-chevron-down
-              %span
-                %a{href: "#"} 12 usuários recomendam
-          / Nested media object
+%li.media
+  .media-body
+    / Nested media object
+    .media
+      %a.pull-left{href: "#"}
+        = image_tag food.photo_url, alt: "", class: "media-object img-polaroid", size: "55x55"
+      .media-body
+        %h5.media-heading
+          %a{href: "#"}= food.name
+          .right-buttons
+            %small
+              %a{href: ""} Editar
+              |
+              = link_to "Apagar", panel_restaurant_food_path(@restaurant.id, food.id), method: :delete unless food.new_record?
+        %p
+          = food.description
+        %ul#0001.post-meta.best
+          %li.first
+            %i.icon-chevron-down
+            %span
+              %a{href: "#"} 12 usuários recomendam
+        / Nested media object
+        .clearfix
+        #best-dish-0001.media-noborder.best-dish
+          %ul.thumbnails
+            %li
+              %a.thumbnail{href: "#"}
+                %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
+            %li
+              %a.thumbnail{href: "#"}
+                %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
+            %li
+              %a.thumbnail{href: "#"}
+                %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
+            %li
+              %a.thumbnail{href: "#"}
+                %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
+            %li
+              %a.thumbnail{href: "#"}
+                %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
+            %li
+              %a.thumbnail{href: "#"}
+                %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
+            %li
+              %a.thumbnail{href: "#"}
+                %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
+            %li
+              %a.thumbnail{href: "#"}
+                %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
+            %li
+              %a.thumbnail{href: "#"}
+                %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
+            %li
+              %a.thumbnail{href: "#"}
+                %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
+            %li
+              %a.thumbnail{href: "#"}
+                %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
+            %li
+              %a.thumbnail{href: "#"}
+                %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
+          %br/
           .clearfix
-          #best-dish-0001.media-noborder.best-dish
-            %ul.thumbnails
-              %li
-                %a.thumbnail{href: "#"}
-                  %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
-              %li
-                %a.thumbnail{href: "#"}
-                  %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
-              %li
-                %a.thumbnail{href: "#"}
-                  %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
-              %li
-                %a.thumbnail{href: "#"}
-                  %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
-              %li
-                %a.thumbnail{href: "#"}
-                  %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
-              %li
-                %a.thumbnail{href: "#"}
-                  %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
-              %li
-                %a.thumbnail{href: "#"}
-                  %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
-              %li
-                %a.thumbnail{href: "#"}
-                  %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
-              %li
-                %a.thumbnail{href: "#"}
-                  %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
-              %li
-                %a.thumbnail{href: "#"}
-                  %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
-              %li
-                %a.thumbnail{href: "#"}
-                  %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
-              %li
-                %a.thumbnail{href: "#"}
-                  %img{alt: "", src: "assets/avatar-usuario-thumb.jpg"}/
-            %br/
-            .clearfix
-            %ul#0001.post-meta.comments
-              %li.first
-                %span 2 comentários
-              %li.last
-                %a{href: ""} Ver todos
-            .clearfix
-            #comments-dish-0001.media-noborder.comments-dish
-              %ul.media-list
-                %li.media-borderbottom
-                  %a.pull-left.thumbnail{href: "#"}
-                    %img.media-object{alt: "Penélope Barbosa", "data-content" => "<strong>Total de Recomendações: </strong> 132 <br /> <strong>Membro desde: </strong> 13 de Janeiro de 2012 <br /> <strong>Cidade: </strong> João Pessoa", "data-original-title" => "<img src='assets/avatar-usuario-thumb.jpg' /> <strong>Penélope Barbosa</strong>", "data-rel" => "popover", src: "assets/avatar-usuario-thumb.jpg"}/
-                  .media-body
-                    %h5.media-heading
-                      %a{href: "#"} Mike sullivan
-                      %span 3 March, 2013
-                    %p
-                      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                %li.media-borderbottom
-                  %a.pull-left.thumbnail{href: "#"}
-                    %img.media-object{alt: "Penélope Barbosa", "data-content" => "<strong>Total de Recomendações: </strong> 132 <br /> <strong>Membro desde: </strong> 13 de Janeiro de 2012 <br /> <strong>Cidade: </strong> João Pessoa", "data-original-title" => "<img src='assets/avatar-usuario-thumb.jpg' /> <strong>Penélope Barbosa</strong>", "data-rel" => "popover", src: "assets/avatar-usuario-thumb.jpg"}/
-                  .media-body
-                    %h5.media-heading
-                      %a{href: "#"} Mike sullivan
-                      %span 3 March, 2013
-                    %p
-                      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+          %ul#0001.post-meta.comments
+            %li.first
+              %span 2 comentários
+            %li.last
+              %a{href: ""} Ver todos
+          .clearfix
+          #comments-dish-0001.media-noborder.comments-dish
+            %ul.media-list
+              %li.media-borderbottom
+                %a.pull-left.thumbnail{href: "#"}
+                  %img.media-object{alt: "Penélope Barbosa", "data-content" => "<strong>Total de Recomendações: </strong> 132 <br /> <strong>Membro desde: </strong> 13 de Janeiro de 2012 <br /> <strong>Cidade: </strong> João Pessoa", "data-original-title" => "<img src='assets/avatar-usuario-thumb.jpg' /> <strong>Penélope Barbosa</strong>", "data-rel" => "popover", src: "assets/avatar-usuario-thumb.jpg"}/
+                .media-body
+                  %h5.media-heading
+                    %a{href: "#"} Mike sullivan
+                    %span 3 March, 2013
+                  %p
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+              %li.media-borderbottom
+                %a.pull-left.thumbnail{href: "#"}
+                  %img.media-object{alt: "Penélope Barbosa", "data-content" => "<strong>Total de Recomendações: </strong> 132 <br /> <strong>Membro desde: </strong> 13 de Janeiro de 2012 <br /> <strong>Cidade: </strong> João Pessoa", "data-original-title" => "<img src='assets/avatar-usuario-thumb.jpg' /> <strong>Penélope Barbosa</strong>", "data-rel" => "popover", src: "assets/avatar-usuario-thumb.jpg"}/
+                .media-body
+                  %h5.media-heading
+                    %a{href: "#"} Mike sullivan
+                    %span 3 March, 2013
+                  %p
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.

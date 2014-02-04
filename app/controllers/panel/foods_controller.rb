@@ -5,7 +5,7 @@ class Panel::FoodsController < ApplicationController
 
   def index
     @foods = @restaurant.foods
-    @food = @restaurant.foods.new
+    @food = Food.new
   end
 
   def create
@@ -29,7 +29,7 @@ class Panel::FoodsController < ApplicationController
   def load_variables
     @restaurant = current_user.restaurants.find(params[:restaurant_id])
     @menu_categories = @restaurant.menu_categories
-    @menu_category = @restaurant.menu_categories.new
+    @menu_category = MenuCategory.new
   end
 
   def food_params

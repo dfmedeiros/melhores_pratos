@@ -3,10 +3,10 @@ class Panel::MenuCategoriesController < ApplicationController
   before_filter :load_variables
 
   def show
-    @new_category = @restaurant.menu_categories.new
+    @new_category = MenuCategory.new
     @menu_category = @restaurant.menu_categories.find(params[:id])
     @foods = @menu_category.foods
-    @food = @menu_category.foods.new
+    @food = Food.new
   end
 
   def create
