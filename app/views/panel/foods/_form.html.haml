@@ -37,19 +37,9 @@
         = f.select :menu_category_id, options_from_collection_for_select(@menu_categories, :id, :name, f.object.menu_category_id), { include_blank: true }, class: "span6"
     %tr
       %th
-        %label Preço:
+        %label Preços:
       %td
         %fieldset
-          %p.custom-check
-            %input.custom-radio{name: "preco_fixo", type: "radio"}/
-            %label{for: "preco_fixo"} Este prato possui um preço fixo
-          %br/
-          %input{name: "preco", type: "text"}/
-          %br/
-          %br/
-          %p.custom-check
-            %input.custom-radio{name: "preco_fixo", type: "radio"}/
-            %label{for: "preco_fixo"} Este prato possui um preço que varia conforme quantidade, tamanho, ingredientes, etc.
           %table
             %tr
               %td Descrição
