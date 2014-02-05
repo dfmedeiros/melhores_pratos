@@ -5,4 +5,10 @@ class Food < ActiveRecord::Base
   belongs_to :menu_category, counter_cache: true
   has_and_belongs_to_many :cuisines
 
+  attr_reader :cuisine_tokens
+
+  def cuisine_tokens=(ids)
+    self.cuisine_ids = ids.split(",")
+  end
+
 end

@@ -27,9 +27,9 @@
             %a.btn{href: "#"} Escolher Arquivo
     %tr
       %th
-        %label Cozinhas:
+        = f.label :cuisine_tokens, "Cozinhas"
       %td
-        %input#prato-cozinhas.span6{name: "cozinhas", type: "text"}/
+        = f.text_field :cuisine_tokens, class: "span6", data: { load: @food.cuisines }
     %tr
       %th
         = f.label :menu_category_id, "Categoria"

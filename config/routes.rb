@@ -8,6 +8,7 @@ MelhoresPratos::Application.routes.draw do
 
   resources :addresses
   resources :cities
+  resources :cuisines
 
   devise_for :users
 
