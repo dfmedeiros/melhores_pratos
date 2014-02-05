@@ -35,6 +35,6 @@ class Panel::FoodsController < ApplicationController
   def food_params
     params
       .require(:food)
-      .permit(:name, :description, :photo, :special, :menu_category_id)
+      .permit(:name, :description, :photo, :special, :menu_category_id, :cuisine_tokens)
   end
 end
