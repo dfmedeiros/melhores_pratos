@@ -7,8 +7,8 @@ class Food < ActiveRecord::Base
 
   attr_reader :cuisine_tokens
 
-  def cuisine_tokens=(ids)
-    self.cuisine_ids = ids.split(",")
+  def cuisine_tokens=(tokens)
+    self.cuisine_ids = Cuisine.ids_from_tokens(tokens)
   end
 
 end
