@@ -6,6 +6,8 @@ class Food < ActiveRecord::Base
   has_and_belongs_to_many :cuisines
   has_many :portions
 
+  validates :name, presence: true
+
   accepts_nested_attributes_for :portions, allow_destroy: true
 
   attr_reader :cuisine_tokens

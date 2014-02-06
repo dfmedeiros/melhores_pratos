@@ -5,11 +5,9 @@ class CreateFoods < ActiveRecord::Migration
       t.text :description
       t.string :photo
       t.boolean :special, default: false
-      t.references :menu_category
+      t.references :menu_category, index: true
 
       t.timestamps
     end
-
-    add_index :foods, :menu_category_id
   end
 end

@@ -1,3 +1,4 @@
+= render "shared/error_messages", resource: @food
 = nested_form_for @food, url: panel_restaurant_foods_path(@restaurant), id: "pratoform" do |f|
   %table.central-table-form
     %tr
