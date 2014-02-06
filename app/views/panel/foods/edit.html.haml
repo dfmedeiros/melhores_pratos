@@ -46,5 +46,5 @@
       = render partial: "panel/foods/food", collection: @foods
 
     = render "shared/error_messages", resource: @food
-    = nested_form_for @food, url: panel_restaurant_foods_path(@restaurant), id: "pratoform" do |f|
+    = nested_form_for @food, url: panel_restaurant_food_path(@restaurant, @food), id: "pratoform" do |f|
       = render "panel/foods/form", f: f

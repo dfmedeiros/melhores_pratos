@@ -9,7 +9,7 @@
           %a{href: "#"}= food.name
           .right-buttons
             %small
-              %a{href: ""} Editar
+              = link_to "Editar", edit_panel_restaurant_food_path(@restaurant.id, food.id)
               |
               = link_to "Apagar", panel_restaurant_food_path(@restaurant.id, food.id), method: :delete unless food.new_record?
         %p

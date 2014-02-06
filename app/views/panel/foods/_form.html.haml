@@ -1,73 +1,71 @@
-= render "shared/error_messages", resource: @food
-= nested_form_for @food, url: panel_restaurant_foods_path(@restaurant), id: "pratoform" do |f|
-  %table.central-table-form
-    %tr
-      %th
-        = f.label :name, "Nome do Prato:"
-      %td
-        = f.text_field :name, class: "span6"
-    %tr
-      %th
-      %td
-        %p.custom-check
-          = f.check_box :special
-          = f.label :special, "Esse prato é uma especialidade da casa"
-    %tr
-      %th
-        = f.label :description, "Descrição:"
-      %td
-        = f.text_area :description, class: "span6"
-    %tr
-      %th
-        = f.label :photo, "Foto:"
-        %label Imagem:
-      %td
-        %span.prettyFile
-          = f.file_field :photo
-          .input-append
-            %input.input-large{type: "text"}/
-            %a.btn{href: "#"} Escolher Arquivo
-    %tr
-      %th
-        = f.label :cuisine_tokens, "Cozinhas:"
-      %td
-        = f.text_field :cuisine_tokens, class: "span6", data: { load: @food.cuisines }
-    %tr
-      %th
-        = f.label :menu_category_id, "Categoria:"
-      %td
-        = f.select :menu_category_id, options_from_collection_for_select(@menu_categories, :id, :name, f.object.menu_category_id), { include_blank: true }, class: "span6"
-    %tr
-      %th
-        %label Preços:
-      %td
-        %fieldset
-          %table#portions
-            = f.fields_for :portions do |portion_form|
-              %tr
-                %td Descrição
-                %td Preço
-                %td
-              %tr
-                %td
-                  = portion_form.text_field :size
-                %td
-                  .input-prepend
-                    %span.add-on R$
-                    = portion_form.text_field :price
-                %td= portion_form.link_to_remove "Remover preço"
+
+%table.central-table-form
+  %tr
+    %th
+      = f.label :name, "Nome do Prato:"
+    %td
+      = f.text_field :name, class: "span6"
+  %tr
+    %th
+    %td
+      %p.custom-check
+        = f.check_box :special
+        = f.label :special, "Esse prato é uma especialidade da casa"
+  %tr
+    %th
+      = f.label :description, "Descrição:"
+    %td
+      = f.text_area :description, class: "span6"
+  %tr
+    %th
+      = f.label :photo, "Imagem:"
+    %td
+      %span.prettyFile
+        = f.file_field :photo
+        .input-append
+          %input.input-large{type: "text"}/
+          %a.btn{href: "#"} Escolher Arquivo
+  %tr
+    %th
+      = f.label :cuisine_tokens, "Cozinhas:"
+    %td
+      = f.text_field :cuisine_tokens, class: "span6", data: { load: @food.cuisines }
+  %tr
+    %th
+      = f.label :menu_category_id, "Categoria:"
+    %td
+      = f.select :menu_category_id, options_from_collection_for_select(@menu_categories, :id, :name, f.object.menu_category_id), { include_blank: true }, class: "span6"
+  %tr
+    %th
+      %label Preços:
+    %td
+      %fieldset
+        %table#portions
+          = f.fields_for :portions do |portion_form|
+            %tr
+              %td Descrição
+              %td Preço
+              %td
             %tr
               %td
-                = f.link_to_add :portions do
-                  %button.btn
-                    %i.icon-plus-sign
-                    Adcionar Preço
+                = portion_form.text_field :size
               %td
-    %tr
-      %th
-      %td
-        %br/
-        %br/
-        %button.btn.btn-large.btn-block.btn-theme
-          %i.icon-plus-sign>
-          Adicionar Prato
+                .input-prepend
+                  %span.add-on R$
+                  = portion_form.text_field :price
+              %td= portion_form.link_to_remove "Remover preço"
+          %tr
+            %td
+              = f.link_to_add :portions do
+                %button.btn
+                  %i.icon-plus-sign
+                  Adcionar Preço
+            %td
+  %tr
+    %th
+    %td
+      %br/
+      %br/
+      %button.btn.btn-large.btn-block.btn-theme
+        %i.icon-plus-sign>
+        Adicionar Prato

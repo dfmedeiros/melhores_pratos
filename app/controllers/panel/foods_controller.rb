@@ -4,7 +4,6 @@ class Panel::FoodsController < ApplicationController
   before_filter :load_variables
 
   def index
-    @foods = @restaurant.foods
     @food = Food.new
   end
 
@@ -13,7 +12,20 @@ class Panel::FoodsController < ApplicationController
     if @food.save
       redirect_to panel_restaurant_foods_path(@restaurant), notice: "Prato criado com sucesso."
     else
-      render "panel/foods/index"
+      render :index
+    end
+  end
+
+  def edit
+    @food = @restaurant.foods.find(params[:id])
+  end
+
+  def update
+    @food = @restaurant.foods.find(params[:id])
+    if @food.update_attributes(food_params)
+      redirect_to panel_restaurant_foods_path(@restaurant), notice: "Prato atualizado com sucesso."
+    else
+      render :edit
     end
   end
 
@@ -30,6 +42,7 @@ class Panel::FoodsController < ApplicationController
     @restaurant = current_user.restaurants.find(params[:restaurant_id])
     @menu_categories = @restaurant.menu_categories
     @menu_category = MenuCategory.new
+    @foods = @restaurant.foods
   end
 
   def food_params
