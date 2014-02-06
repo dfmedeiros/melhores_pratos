@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140205014300) do
+ActiveRecord::Schema.define(version: 20140205235026) do
 
   create_table "cities", force: true do |t|
     t.string   "name",       default: "", null: false
@@ -58,6 +58,16 @@ ActiveRecord::Schema.define(version: 20140205014300) do
   end
 
   add_index "menu_categories", ["restaurant_id"], name: "index_menu_categories_on_restaurant_id", using: :btree
+
+  create_table "portions", force: true do |t|
+    t.string   "size"
+    t.float    "price",      default: 0.0, null: false
+    t.integer  "food_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "portions", ["food_id"], name: "index_portions_on_food_id", using: :btree
 
   create_table "restaurants", force: true do |t|
     t.string   "name",               default: "", null: false

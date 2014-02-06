@@ -4,6 +4,7 @@ class Food < ActiveRecord::Base
 
   belongs_to :menu_category, counter_cache: true
   has_and_belongs_to_many :cuisines
+  has_many :portions
 
   attr_reader :cuisine_tokens
 
