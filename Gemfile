@@ -12,6 +12,7 @@ gem 'haml'
 gem 'devise'
 gem 'carrierwave'
 gem 'brcep'
+gem 'nested_form'
 
 group :development, :test do
   gem 'pry'
