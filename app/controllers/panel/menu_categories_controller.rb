@@ -18,6 +18,13 @@ class Panel::MenuCategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @menu_category = @restaurant.menu_categories.find(params[:id])
+    @menu_category.destroy
+
+    redirect_to panel_restaurant_foods_path(@restaurant), notice: "Categoria removida com sucesso"
+  end
+
   private
 
   def load_variables

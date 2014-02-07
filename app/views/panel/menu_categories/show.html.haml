@@ -44,9 +44,20 @@
           Pratos
           %i.icon-chevron-right{style: "font-size:18px"}
           = @menu_category.name
+        = link_to "Remover Categoria", "#delete", data: { toggle: "modal" }
     %ul.media-list.media-list-sub-item
       = render partial: "panel/foods/food", collection: @foods, as: :food
 
     = render "shared/error_messages", resource: @food
     = nested_form_for @food, url: panel_restaurant_foods_path(@restaurant), id: "pratoform" do |f|
       = render "panel/foods/form", f: f
+
+#delete.modal.hide.fade
+  .modal-header
+    %button.close{ data: { dismiss: "modal" } } ×
+    %h3 Remover Categoria
+  .modal-body
+    %p Ao remover a categoria, todos os pratos serão destruídos. Deseja continuar?
+  .modal-footer
+    = link_to "Sim, Remover Categoria", panel_restaurant_menu_category_path(@restaurant, @menu_category), method: :delete, class: "btn btn-theme"
+    = link_to "Voltar", "#", class: "btn", data: { dismiss: "modal" }
