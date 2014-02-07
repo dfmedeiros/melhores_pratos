@@ -18,6 +18,15 @@ class Panel::MenuCategoriesController < ApplicationController
     end
   end
 
+  def edit
+    @menu_category = @restaurant.menu_categories.find(params[:id])
+  end
+
+  def update
+    @menu_category = @restaurant.menu_categories.find(params[:id])
+    @menu_category.update_attributes(menu_category_params)
+  end
+
   def destroy
     @menu_category = @restaurant.menu_categories.find(params[:id])
     @menu_category.destroy

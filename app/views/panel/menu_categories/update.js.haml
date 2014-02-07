@@ -1,0 +1,4 @@
+- if @menu_category.valid?
+  location.href = "#{panel_restaurant_menu_category_path(@restaurant, @menu_category)}";
+- else
+  $("#category_errors").html("#{escape_javascript(render 'shared/error_messages', resource: @menu_category)}");
