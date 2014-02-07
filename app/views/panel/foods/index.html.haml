@@ -1,41 +1,6 @@
 .row
-  / Últimas Recomendações
-  .span12
-    %article.blog-post
-      .post-heading
-        %h3 Editar Cardápio
-    %ul.media-list.mo-border-bottom
-      %li.media
-        %a.pull-left.thumbnail{href: "#"}
-          %img.media-object{alt: "Penélope Barbosa", "data-content" => "<strong>Total de Recomendações: </strong> 132 <br /> <strong>Membro desde: </strong> 13 de Janeiro de 2012 <br /> <strong>Cidade: </strong> João Pessoa", "data-original-title" => "<img src='assets/avatar-usuario-thumb.jpg' /> <strong>Penélope Barbosa</strong>", "data-rel" => "popover", src: @restaurant.logo_url, width: 120, height: 95}/
-        .media-body
-          %h5.media-heading
-            = link_to @restaurant.name
-          %p
-            = @restaurant.description
-          %ul#0002.post-meta.comments
-            %li.first
-              %i.icon-map-marker
-              = @restaurant.street
-            %li.last
-              %span
-                %i.icon-phone>
-                = @restaurant.phone_number
-              %br/
-  .span4
-    %aside
-      .widget
-        %h4.rheading
-          Categorias
-          %span
-        %ul#categoria-sortable.side-list
-          %li= link_to "Todos os pratos (#{@restaurant.foods.count})", panel_restaurant_foods_path(@restaurant)
-          - @menu_categories.each do |category|
-            %li
-              = link_to "#{category.name} (#{category.foods_count})", panel_restaurant_menu_category_path(@restaurant, category)
-        = render "shared/error_messages", resource: @menu_category
-        = form_for :menu_category, url: panel_restaurant_menu_categories_path, html: { id: "categoriaform" } do |f|
-          = render "panel/menu_categories/form", f: f
+  = render "panel/restaurants/menu_info"
+  = render "panel/menu_categories/sidebar"
 
   .span8
     %article.blog-post

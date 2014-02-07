@@ -41,7 +41,7 @@ class Panel::FoodsController < ApplicationController
   def load_variables
     @restaurant = current_user.restaurants.find(params[:restaurant_id])
     @menu_categories = @restaurant.menu_categories
-    @menu_category = MenuCategory.new
+    @new_category = MenuCategory.new
     @foods = @restaurant.foods
   end
 

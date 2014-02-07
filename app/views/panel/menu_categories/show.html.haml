@@ -1,41 +1,6 @@
 .row
-  / Últimas Recomendações
-  .span12
-    %article.blog-post
-      .post-heading
-        %h3 Editar Cardápio
-    %ul.media-list.mo-border-bottom
-      %li.media
-        %a.pull-left.thumbnail{href: "#"}
-          %img.media-object{alt: "Penélope Barbosa", "data-content" => "<strong>Total de Recomendações: </strong> 132 <br /> <strong>Membro desde: </strong> 13 de Janeiro de 2012 <br /> <strong>Cidade: </strong> João Pessoa", "data-original-title" => "<img src='assets/avatar-usuario-thumb.jpg' /> <strong>Penélope Barbosa</strong>", "data-rel" => "popover", src: @restaurant.logo_url, width: 120, height: 95}/
-        .media-body
-          %h5.media-heading
-            = link_to @restaurant.name
-          %p
-            = @restaurant.description
-          %ul#0002.post-meta.comments
-            %li.first
-              %i.icon-map-marker
-              = @restaurant.street
-            %li.last
-              %span
-                %i.icon-phone>
-                = @restaurant.phone_number
-              %br/
-  .span4
-    %aside
-      .widget
-        %h4.rheading
-          Categorias
-          %span
-        %ul#categoria-sortable.side-list
-          %li= link_to "Todos os pratos (#{@restaurant.foods.count})", panel_restaurant_foods_path(@restaurant)
-          - @menu_categories.each do |category|
-            %li
-              = link_to "#{category.name} (#{category.foods_count})", panel_restaurant_menu_category_path(@restaurant, category)
-        = render "shared/error_messages", resource: @new_category
-        = form_for @new_category, url: panel_restaurant_menu_categories_path, html: { id: "categoriaform" } do |f|
-          = render "panel/menu_categories/form", f: f
+  = render "panel/restaurants/menu_info"
+  = render "panel/menu_categories/sidebar"
 
   .span8
     %article.blog-post
@@ -47,7 +12,7 @@
         = link_to "Remover Categoria", "#delete", class: "btn btn-theme", data: { toggle: "modal" }
         = link_to "Editar Categoria", "#edit", class: "btn btn-theme", data: { toggle: "modal" }
     %ul.media-list.media-list-sub-item
-      = render partial: "panel/foods/food", collection: @foods, as: :food
+      = render partial: "panel/foods/food", collection: @menu_category.foods
 
     = render "shared/error_messages", resource: @food
     = nested_form_for @food, url: panel_restaurant_foods_path(@restaurant), id: "pratoform" do |f|
@@ -58,7 +23,7 @@
     %button.close{ data: { dismiss: "modal" } } ×
     %h3 Remover Categoria
   .modal-body
-    %p Ao remover a categoria, todos os pratos serão destruídos. Deseja continuar?
+    %p Ao remover a categoria, todos os pratos serao destruidos. Deseja continuar?
   .modal-footer
     = link_to "Sim, Remover Categoria", panel_restaurant_menu_category_path(@restaurant, @menu_category), method: :delete, class: "btn btn-theme"
     = link_to "Voltar", "#", class: "btn", data: { dismiss: "modal" }
