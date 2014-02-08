@@ -10,6 +10,12 @@
     %ul.media-list.media-list-sub-item
       = render partial: "panel/foods/food", collection: @restaurant.foods
 
+  .span8
+    %article.blog-post
+      .post-heading
+        %h3
+          Cadastrar Prato
+
     #food_errors= render "shared/error_messages", resource: @food
     = nested_form_for @food, url: panel_restaurant_foods_path(@restaurant), remote: true, html: { class: "form-horizontal"} do |f|
       = render "panel/foods/form", f: f

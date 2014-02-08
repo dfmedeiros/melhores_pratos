@@ -53,4 +53,4 @@
   .span12
     %button.btn.btn-large.btn-block.btn-theme
       %i.icon-plus-sign>
-      Adicionar Prato
+      #{f.object.new_record? ? 'Adicionar Prato' : 'Atualizar Prato'}

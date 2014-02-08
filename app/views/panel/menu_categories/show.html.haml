@@ -4,15 +4,24 @@
 
   .span8
     %article.blog-post
+      %p.text-right
+        = link_to "Editar Categoria", "#edit", class: "btn btn-theme", data: { toggle: "modal" }
+        = link_to "Remover Categoria", "#delete", class: "btn btn-theme", data: { toggle: "modal" }
+
       .post-heading
         %h3
           Pratos
           %i.icon-chevron-right{style: "font-size:18px"}
           = @menu_category.name
-        = link_to "Remover Categoria", "#delete", class: "btn btn-theme", data: { toggle: "modal" }
-        = link_to "Editar Categoria", "#edit", class: "btn btn-theme", data: { toggle: "modal" }
+
     %ul.media-list.media-list-sub-item
       = render partial: "panel/foods/food", collection: @menu_category.foods
+
+  .span8
+    %article.blog-post
+      .post-heading
+        %h3
+          Cadastrar Prato
 
     #food_errors= render "shared/error_messages", resource: @food
     = nested_form_for @food, url: panel_restaurant_foods_path(@restaurant), remote: true, html: { class: "form-horizontal" } do |f|
@@ -35,6 +44,19 @@
   .modal-body
     #category_errors
       = render "shared/error_messages", resource: @menu_category
-    = form_for @menu_category, url: panel_restaurant_menu_category_path(@restaurant, @menu_category), html: { id: "categoriaform", remote: true } do |f|
-      = render "panel/menu_categories/form", f: f
+    = form_for @menu_category, url: panel_restaurant_menu_category_path(@restaurant, @menu_category), html: { class: "form-horizontal", remote: true } do |f|
+      .control-group
+        = f.label :name, "Nome", class: "control-label"
+        .controls
+          = f.text_field :name, class: "span5"
+      .control-group
+        = f.label :description, "Descrição", class: "control-label"
+        .controls
+          = f.text_area :description, class: "span5"
+      .row-fluid
+        .span12
+          = f.button class: "btn btn-large btn-block btn-theme" do
+            %i.icon-plus-sign
+            Atualizar Categoria
+
 
