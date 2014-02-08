@@ -11,12 +11,7 @@ class Panel::MenuCategoriesController < ApplicationController
 
   def create
     @menu_category = @restaurant.menu_categories.new(menu_category_params)
-
-    if @menu_category.save
-      redirect_to panel_restaurant_menu_category_path(@restaurant, @menu_category), notice: "Categoria criada com sucesso."
-    else
-      render "panel/foods/index"
-    end
+    @menu_category.save
   end
 
   def edit
