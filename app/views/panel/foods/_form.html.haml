@@ -1,71 +1,56 @@
+.control-group
+  = f.label :name, "Nome", class: "control-label"
+  .controls
+    = f.text_field :name, class: "span6"
+.control-group
+  %p.custom-check.controls
+    = f.check_box :special
+    = f.label :special, "Esse prato é uma especialidade da casa"
+.control-group
+  = f.label :description, "Descrição", class: "control-label"
+  .controls
+    = f.text_area :description, class: "span6"
+.control-group
+  = f.label :photo, "Imagem", class: "control-label"
+  .controls
+    %span.prettyFile
+      = f.file_field :photo
+      .input-append
+        %input.input-large{type: "text"}/
+        %a.btn{href: "#"} Escolher Arquivo
+.control-group
+  = f.label :cuisine_tokens, "Cozinhas", class: "control-label"
+  .controls{style: "height: 25px"}
+    = f.text_field :cuisine_tokens, class: "span6", data: { load: f.object.cuisines }
+.control-group
+  = f.label :menu_category_id, "Categoria", class: "control-label"
+  .controls
+    = f.select :menu_category_id, options_from_collection_for_select(@restaurant.menu_categories, :id, :name, f.object.menu_category_id), { include_blank: true }, class: "span6"
+.control-group
+  %label.control-label Preços
+  .controls
+    = f.fields_for :portions do |portion_form|
+      .row-fluid
+        .span4 Descrição
+        .span4.offset1 Preço
+      .row-fluid
+        .span4
+          = portion_form.text_field :size, class: "span12"
+        .span4.offset1
+          .input-prepend
+            %span.add-on R$
+            = portion_form.text_field :price, class: "span12"
+      .row-fluid
+        .span12= portion_form.link_to_remove "Remover preço"
+    .row-fluid
+      .span12
+        = f.link_to_add :portions do
+          %button.btn
+            %i.icon-plus-sign
+            Adicionar Preço
 
-%table.central-table-form
-  %tr
-    %th
-      = f.label :name, "Nome do Prato:"
-    %td
-      = f.text_field :name, class: "span6"
-  %tr
-    %th
-    %td
-      %p.custom-check
-        = f.check_box :special
-        = f.label :special, "Esse prato é uma especialidade da casa"
-  %tr
-    %th
-      = f.label :description, "Descrição:"
-    %td
-      = f.text_area :description, class: "span6"
-  %tr
-    %th
-      = f.label :photo, "Imagem:"
-    %td
-      %span.prettyFile
-        = f.file_field :photo
-        .input-append
-          %input.input-large{type: "text"}/
-          %a.btn{href: "#"} Escolher Arquivo
-  %tr
-    %th
-      = f.label :cuisine_tokens, "Cozinhas:"
-    %td
-      = f.text_field :cuisine_tokens, class: "span6", data: { load: f.object.cuisines }
-  %tr
-    %th
-      = f.label :menu_category_id, "Categoria:"
-    %td
-      = f.select :menu_category_id, options_from_collection_for_select(@restaurant.menu_categories, :id, :name, f.object.menu_category_id), { include_blank: true }, class: "span6"
-  %tr
-    %th
-      %label Preços:
-    %td
-      %fieldset
-        %table#portions
-          = f.fields_for :portions do |portion_form|
-            %tr
-              %td Descrição
-              %td Preço
-              %td
-            %tr
-              %td
-                = portion_form.text_field :size
-              %td
-                .input-prepend
-                  %span.add-on R$
-                  = portion_form.text_field :price
-              %td= portion_form.link_to_remove "Remover preço"
-          %tr
-            %td
-              = f.link_to_add :portions do
-                %button.btn
-                  %i.icon-plus-sign
-                  Adicionar Preço
-            %td
-  %tr
-    %th
-    %td
-      %br/
-      %br/
-      %button.btn.btn-large.btn-block.btn-theme
-        %i.icon-plus-sign>
-        Adicionar Prato
+.row-fluid
+  .span12
+    %button.btn.btn-large.btn-block.btn-theme
+      %i.icon-plus-sign>
+      Adicionar Prato

@@ -16,6 +16,8 @@ ul.token-input-list-facebook {
     list-style-type: none;
     clear: left;
     margin-bottom: 10px;
+    position: relative;
+    bottom: 35px;
 }
 
 ul.token-input-list-facebook li input {
