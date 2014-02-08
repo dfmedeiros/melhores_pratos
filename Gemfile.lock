@@ -28,7 +28,6 @@ GEM
     arel (4.0.1)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
-    brcep (3.3.0)
     builder (3.1.4)
     carrierwave (0.9.0)
       activemodel (>= 3.2.0)
@@ -133,7 +132,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  brcep
   carrierwave
   coffee-rails (~> 4.0.0)
   devise

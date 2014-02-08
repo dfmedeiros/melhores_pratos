@@ -6,7 +6,6 @@ MelhoresPratos::Application.routes.draw do
     end
   end
 
-  resources :addresses
   resources :cities
   resources :cuisines
 

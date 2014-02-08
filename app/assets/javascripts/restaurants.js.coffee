@@ -2,16 +2,16 @@ $ = jQuery
 
 $ ->
   $("#restaurant_zip_code").blur (e) ->
-    $.getJSON "/addresses?zipcode=" + e.currentTarget.value, (data) ->
+    $.getJSON "http://cep.correiocontrol.com.br/" + e.currentTarget.value + ".json", (data) ->
       address = data
 
-      $("#restaurant_street").val(address.street_address)
-      $("#restaurant_neighborhood").val(address.neighborhood)
-      $("#state").val($("#state option[data-acronym=#{address.state}]").val()).change()
+      $("#restaurant_street").val(address.logradouro)
+      $("#restaurant_neighborhood").val(address.bairro)
+      $("#state").val($("#state option[data-acronym=#{address.uf}]").val()).change()
 
       $("#restaurant_city_id").val(
         $("#restaurant_city_id option").filter(->
-          $(this).html() is address.city
+          $(this).html() is address.localidade
         ).val()
       ).change()
 
