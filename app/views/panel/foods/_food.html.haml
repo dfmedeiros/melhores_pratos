@@ -1,6 +1,5 @@
 %li.media
   .media-body
-    / Nested media object
     .media
       %a.pull-left{href: "#"}
         = image_tag food.photo_url, alt: "", class: "media-object img-polaroid", size: "55x55"
@@ -9,9 +8,8 @@
           %a{href: "#"}= food.name
           .right-buttons
             %small
-              = link_to "Editar", edit_panel_restaurant_food_path(@restaurant.id, food.id)
-              |
-              = link_to "Apagar", panel_restaurant_food_path(@restaurant.id, food.id), method: :delete unless food.new_record?
+              = "#{link_to 'Editar', edit_panel_restaurant_food_path(@restaurant.id, food.id)} | #{link_to 'Apagar', panel_restaurant_food_path(@restaurant.id, food.id), method: :delete unless food.new_record?}".html_safe
+
         %p
           = food.description
         %ul#0001.post-meta.best
