@@ -1,0 +1,4 @@
+- if @food.valid?
+  location.href = "#{panel_restaurant_foods_path(@restaurant)}";
+- else
+  $("#food_errors").html("#{escape_javascript(render 'shared/error_messages', resource: @food)}");

@@ -11,23 +11,14 @@ class Panel::FoodsController < ApplicationController
 
   def create
     @food = @restaurant.foods.new(food_params)
-
-    if @food.save
-      redirect_to panel_restaurant_foods_path(@restaurant), notice: "Prato criado com sucesso."
-    else
-      render :index
-    end
+    @food.save
   end
 
   def edit
   end
 
   def update
-    if @food.update_attributes(food_params)
-      redirect_to panel_restaurant_foods_path(@restaurant), notice: "Prato atualizado com sucesso."
-    else
-      render :edit
-    end
+    @food.update_attributes(food_params)
   end
 
   def destroy

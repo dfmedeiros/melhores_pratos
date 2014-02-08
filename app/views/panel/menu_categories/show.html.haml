@@ -14,8 +14,8 @@
     %ul.media-list.media-list-sub-item
       = render partial: "panel/foods/food", collection: @menu_category.foods
 
-    = render "shared/error_messages", resource: @food
-    = nested_form_for @food, url: panel_restaurant_foods_path(@restaurant), id: "pratoform" do |f|
+    #food_errors= render "shared/error_messages", resource: @food
+    = nested_form_for @food, url: panel_restaurant_foods_path(@restaurant), remote: true do |f|
       = render "panel/foods/form", f: f
 
 #delete.modal.hide.fade
@@ -34,7 +34,7 @@
     %h3 Editar Categoria
   .modal-body
     #category_errors
-      = render "shared/error_messages", resource: @food
+      = render "shared/error_messages", resource: @menu_category
     = form_for @menu_category, url: panel_restaurant_menu_category_path(@restaurant, @menu_category), html: { id: "categoriaform", remote: true } do |f|
       = render "panel/menu_categories/form", f: f
 

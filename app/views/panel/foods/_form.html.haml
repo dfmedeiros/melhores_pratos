@@ -29,7 +29,7 @@
     %th
       = f.label :cuisine_tokens, "Cozinhas:"
     %td
-      = f.text_field :cuisine_tokens, class: "span6", data: { load: @food.cuisines }
+      = f.text_field :cuisine_tokens, class: "span6", data: { load: f.object.cuisines }
   %tr
     %th
       = f.label :menu_category_id, "Categoria:"

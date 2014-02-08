@@ -10,6 +10,6 @@
     %ul.media-list.media-list-sub-item
       = render partial: "panel/foods/food", collection: @restaurant.foods
 
-    = render "shared/error_messages", resource: @food
-    = nested_form_for @food, url: panel_restaurant_food_path(@restaurant, @food), id: "pratoform" do |f|
+    #food_errors= render "shared/error_messages", resource: @food
+    = nested_form_for @food, url: panel_restaurant_food_path(@restaurant, @food), remote: true do |f|
       = render "panel/foods/form", f: f

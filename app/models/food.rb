@@ -7,6 +7,7 @@ class Food < ActiveRecord::Base
   has_many :portions
 
   validates :name, presence: true
+  validates :menu_category, presence: true
 
   accepts_nested_attributes_for :portions, allow_destroy: true
 
