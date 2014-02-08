@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20140205235026) do
     t.string   "complement"
     t.float    "latitute"
     t.float    "longitude"
-    t.boolean  "gmaps"
+    t.datetime "published_at"
     t.integer  "city_id",                         null: false
     t.integer  "user_id",                         null: false
     t.datetime "created_at"

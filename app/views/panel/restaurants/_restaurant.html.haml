@@ -13,3 +13,7 @@
     %br/
     = link_to edit_panel_restaurant_path(restaurant), class: "btn btn-theme", rel: "tooltip", title: "Configurações", data: { placement: "right" } do
       %i.icon-cog
+    %br/
+    %br/
+    = link_to publish_panel_restaurant_path(restaurant), method: :post, class: "btn btn-theme", rel: "tooltip", title: "Publicar Cardápio", data: { placement: "right" } do
+      %i.icon-cog

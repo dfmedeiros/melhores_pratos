@@ -15,7 +15,7 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :complement
       t.float :latitute
       t.float :longitude
-      t.boolean :gmaps
+      t.datetime :published_at
       t.references :city, null: false
       t.references :user, null: false
 

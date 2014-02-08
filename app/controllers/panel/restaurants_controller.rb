@@ -1,12 +1,12 @@
 class Panel::RestaurantsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :load_restaurant, only: [:show, :edit, :destroy, :publish]
 
   def index
     @restaurants = current_user.restaurants
   end
 
   def show
-    @restaurant = current_user.restaurants.find(params[:id])
   end
 
   def new
@@ -23,7 +23,6 @@ class Panel::RestaurantsController < ApplicationController
   end
 
   def edit
-    @restaurant = current_user.restaurants.find(params[:id])
   end
 
   def update
@@ -35,13 +34,23 @@ class Panel::RestaurantsController < ApplicationController
     end
   end
 
+  def publish
+    published_at = @restaurant.published_at ? nil : Time.current
+    @restaurant.update_attributes(published_at: published_at)
+
+    redirect_to panel_restaurants_path, notice: "Menu publicado com sucesso."
+  end
+
   def destroy
-    @restaurant = current_user.restaurants.find(params[:id])
     @restaurant.destroy
     redirect_to panel_restaurants_path, notice: "Restaurante removido com sucesso."
   end
 
   private
+
+  def load_restaurant
+    @restaurant = current_user.restaurants.find(params[:id])
+  end
 
   def restaurant_params
     params
