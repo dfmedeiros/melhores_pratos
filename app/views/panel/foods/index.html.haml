@@ -1,6 +1,6 @@
 .row
   = render "panel/restaurants/menu_info"
-  = render "panel/menu_categories/sidebar"
+  = render "panel/menu_categories/sidebar", menu_category: @menu_category
 
   .span8
     %article.blog-post
@@ -8,7 +8,7 @@
         %h3
           Todos os Pratos
     %ul.media-list.media-list-sub-item
-      = render partial: "panel/foods/food", collection: @foods
+      = render partial: "panel/foods/food", collection: @restaurant.foods
 
     = render "shared/error_messages", resource: @food
     = nested_form_for @food, url: panel_restaurant_foods_path(@restaurant), id: "pratoform" do |f|

@@ -1,16 +1,17 @@
 class Panel::MenuCategoriesController < ApplicationController
 
-  before_filter :load_variables
+  before_filter :authenticate_user!
+  before_filter :load_restaurant
+  before_filter :load_food, only: [:show, :create]
+  before_filter :load_category, except: [:create]
 
   def show
     @new_category = MenuCategory.new
-    @menu_category = @restaurant.menu_categories.find(params[:id])
-    @foods = @menu_category.foods
-    @food = Food.new
   end
 
   def create
     @menu_category = @restaurant.menu_categories.new(menu_category_params)
+
     if @menu_category.save
       redirect_to panel_restaurant_menu_category_path(@restaurant, @menu_category), notice: "Categoria criada com sucesso."
     else
@@ -19,16 +20,13 @@ class Panel::MenuCategoriesController < ApplicationController
   end
 
   def edit
-    @menu_category = @restaurant.menu_categories.find(params[:id])
   end
 
   def update
-    @menu_category = @restaurant.menu_categories.find(params[:id])
     @menu_category.update_attributes(menu_category_params)
   end
 
   def destroy
-    @menu_category = @restaurant.menu_categories.find(params[:id])
     @menu_category.destroy
 
     redirect_to panel_restaurant_foods_path(@restaurant), notice: "Categoria removida com sucesso"
@@ -36,9 +34,16 @@ class Panel::MenuCategoriesController < ApplicationController
 
   private
 
-  def load_variables
+  def load_restaurant
     @restaurant = current_user.restaurants.find(params[:restaurant_id])
-    @menu_categories = @restaurant.menu_categories
+  end
+
+  def load_category
+    @menu_category = @restaurant.menu_categories.find(params[:id])
+  end
+
+  def load_food
+    @food = Food.new
   end
 
   def menu_category_params

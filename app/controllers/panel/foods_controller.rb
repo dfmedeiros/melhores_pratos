@@ -1,7 +1,9 @@
 class Panel::FoodsController < ApplicationController
 
   before_filter :authenticate_user!
-  before_filter :load_variables
+  before_filter :load_restaurant
+  before_filter :load_food, except: [:index, :create]
+  before_filter :load_category, except: :destroy
 
   def index
     @food = Food.new
@@ -9,6 +11,7 @@ class Panel::FoodsController < ApplicationController
 
   def create
     @food = @restaurant.foods.new(food_params)
+
     if @food.save
       redirect_to panel_restaurant_foods_path(@restaurant), notice: "Prato criado com sucesso."
     else
@@ -17,11 +20,9 @@ class Panel::FoodsController < ApplicationController
   end
 
   def edit
-    @food = @restaurant.foods.find(params[:id])
   end
 
   def update
-    @food = @restaurant.foods.find(params[:id])
     if @food.update_attributes(food_params)
       redirect_to panel_restaurant_foods_path(@restaurant), notice: "Prato atualizado com sucesso."
     else
@@ -30,7 +31,6 @@ class Panel::FoodsController < ApplicationController
   end
 
   def destroy
-    @food = @restaurant.foods.find(params[:id])
     @food.destroy
 
     redirect_to panel_restaurant_foods_path(@restaurant), notice: "Prato removido com sucesso"
@@ -38,11 +38,16 @@ class Panel::FoodsController < ApplicationController
 
   private
 
-  def load_variables
+  def load_restaurant
     @restaurant = current_user.restaurants.find(params[:restaurant_id])
-    @menu_categories = @restaurant.menu_categories
-    @new_category = MenuCategory.new
-    @foods = @restaurant.foods
+  end
+
+  def load_food
+    @food = @restaurant.foods.find(params[:id])
+  end
+
+  def load_category
+    @menu_category = MenuCategory.new
   end
 
   def food_params
