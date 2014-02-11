@@ -11,6 +11,7 @@ gem 'haml'
 
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 gem 'carrierwave'
 gem 'nested_form'
 
