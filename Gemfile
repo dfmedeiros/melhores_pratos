@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'haml'
 
 gem 'devise'
+gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'nested_form'
 

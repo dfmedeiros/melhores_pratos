@@ -12,7 +12,7 @@ MelhoresPratos::Application.routes.draw do
   resources :cities
   resources :cuisines
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   root to: 'site#home'
 end
