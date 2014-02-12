@@ -202,3 +202,7 @@ section.banner  .search p{
 .field_with_errors input {
     border-color: #b94a48;
 }
+
+.btn-social-network {
+    width: 258px;
+}

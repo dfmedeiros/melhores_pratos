@@ -1,0 +1,30 @@
+#sign_in_email.modal.hide.fade
+  .modal-header
+    %button.close{ data: { dismiss: "modal" } } ×
+    %h3 Login
+  .modal-body
+    %p Acesse com seu cadastro
+    = form_for :user, url: user_session_path, html: { class: "form-horizontal" } do |f|
+      .control-group
+        = f.label :email, class: "control-label" do
+          Email
+          %span *
+        .controls
+          = f.email_field :email, placeholder: "Seu email"
+      .control-group
+        = f.label :password, class: "control-label" do
+          Senha
+          %span *
+        .controls
+          = f.password_field :password, placeholder: "Sua senha"
+      .control-group
+        .controls.submit
+          = f.submit "Entrar", class: "btn btn-theme"
+  .modal-footer
+    %p
+      Usa redes sociais?
+      = link_to "Entre aqui", "#sign_in", data: { dismiss: "modal", toggle: "modal" }
+      %br
+      Esqueceu sua senha?
+      = link_to "Recupere aqui", "#reset_password", data: { dismiss: "modal", toggle: "modal" }
+

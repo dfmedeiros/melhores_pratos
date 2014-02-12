@@ -1,0 +1,33 @@
+#sign_up_email.modal.hide.fade
+  .modal-header
+    %button.close{ data: { dismiss: "modal" } } ×
+    %h3 Registro
+  .modal-body
+    %p Preencha todos os campos abaixo e efetue seu registro
+    .row-registro
+      = form_for :user, url: user_registration_path, html: { class: "registro-form form-horizontal" } do |f|
+        .control-group
+          = f.label :email, class: "control-label" do
+            Email
+            %span *
+          .controls
+            = f.email_field :email, placeholder: "Seu email"
+        .control-group
+          = f.label :password, class: "control-label" do
+            Senha
+            %span *
+          .controls
+            = f.password_field :password, placeholder: "Sua senha"
+        .control-group
+          = f.label :password_confirmation, class: "control-label" do
+            Confirmar Senha
+            %span *
+          .controls
+            = f.password_field :password_confirmation, placeholder: "Confirme sua senha"
+        .control-group
+          .controls.submit
+            = f.submit "Registro", class: "btn btn-theme"
+  .modal-footer
+    %p
+      Já possui uma conta?
+      = link_to "Faça Login", "#sign_in", data: { dismiss: "modal", toggle: "modal" }

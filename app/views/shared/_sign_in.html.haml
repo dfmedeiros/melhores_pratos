@@ -3,40 +3,21 @@
     %button.close{ data: { dismiss: "modal" } } ×
     %h3 Login
   .modal-body
-    .row-login
-      %p Acesse com seu cadastro
-      = form_for :user, url: user_session_path, html: { class: "login-form form-horizontal" } do |f|
-        .control-group
-          = f.label :email, class: "control-label" do
-            Email
-            %span *
-          .controls
-            = f.email_field :email, placeholder: "Seu email"
-        .control-group
-          = f.label :password, class: "control-label" do
-            Senha
-            %span *
-          .controls
-            = f.password_field :password, placeholder: "Sua senha"
-        .control-group
-          .controls.submit
-            = f.submit "Entrar", class: "btn btn-theme"
-    .row-social-login
-      %p Acesse pelas redes sociais
-      %ul.social-signin-group
-        %li
-          = link_to "#" do
-            .social-signin.social-signin-twitter
-        %li
-          = link_to user_omniauth_authorize_path(:facebook) do
-            .social-signin.social-signin-facebook
-        %li
-          = link_to user_omniauth_authorize_path(:google_oauth2) do
-            .social-signin.social-signin-google
+    %p
+      .text-center
+        = link_to user_omniauth_authorize_path(:facebook), class: "btn btn-theme btn-large btn-social-network" do
+          %i.icon-facebook-sign
+          Entrar com o Facebook
+      %br
+      .text-center
+        = link_to user_omniauth_authorize_path(:google_oauth2), class: "btn btn-theme btn-large btn-social-network" do
+          %i.icon-google-plus-sign
+          Entrar com o Google+
   .modal-footer
     %p
+      Não usa redes sociais?
+      = link_to "Entre com seu email", "#sign_in_email", data: { dismiss: "modal", toggle: "modal" }
+      %br
       Não possui uma conta?
       = link_to "Registre-se", "#sign_up", data: { dismiss: "modal", toggle: "modal" }
-      %br/
-      Esqueceu sua senha?
-      = link_to "Recupere aqui", "#reset_password", data: { dismiss: "modal", toggle: "modal" }
+
