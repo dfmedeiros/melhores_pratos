@@ -12,6 +12,17 @@
         .controls
           = f.text_field :name, class: "span8"
       .control-group
+        .controls
+          = image_tag resource.avatar_url, size: "100x100"
+      .control-group
+        = f.label :avatar, "Foto", class: "control-label"
+        .controls
+          %span.prettyFile
+            = f.file_field :avatar
+            .input-append
+              %input.span6{type: "text"}
+              %a.btn{href: "#"} Escolher Arquivo
+      .control-group
         = f.label :email, class: "control-label"
         .controls
           = f.email_field :email, class: "span8"

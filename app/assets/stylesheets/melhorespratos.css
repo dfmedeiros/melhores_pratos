@@ -199,9 +199,6 @@ section.banner  .search p{
     width: 20px;
     max-height: 20px;
 }
-.field_with_errors {
-    display: inline-block;
-}
 .field_with_errors input {
     border-color: #b94a48;
 }
