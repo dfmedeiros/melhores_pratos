@@ -1,27 +1,35 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put } do |f|
-  = devise_error_messages!
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  %div
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  %div
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %div
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password
-  %div= f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Remove account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+.row
+  .span12
+    %article.blog-post
+      .post-heading
+        %h3 Editar Perfil
+
+    = render "shared/error_messages", resource: resource
+
+    = form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form-horizontal" } do |f|
+      .control-group
+        = f.label :name, "Nome", class: "control-label"
+        .controls
+          = f.text_field :name, class: "span8"
+      .control-group
+        = f.label :email, class: "control-label"
+        .controls
+          = f.email_field :email, class: "span8"
+      .control-group
+        = f.label :password, "Senha", class: "control-label"
+        .controls
+          = f.password_field :password, autocomplete: "off", class: "span8"
+          %span.help-block Deixe em branco caso não queira mudá-la
+      .control-group
+        = f.label :password_confirmation, "Confirmação de Senha", class: "control-label"
+        .controls
+          = f.password_field :password_confirmation, autocomplete: "off", class: "span8"
+      - if f.object.encrypted_password.present?
+        .control-group
+          = f.label :current_password, "Senha Atual", class: "control-label"
+          .controls
+            = f.password_field :current_password, autocomplete: "off", class: "span8"
+            %span.help-block Precisamos de sua senha para confirmar as alterações
+      .control-group
+        .controls
+          = f.submit "Atualizar", class: "btn btn-theme btn-large"

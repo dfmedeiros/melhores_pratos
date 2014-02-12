@@ -1955,10 +1955,10 @@ a.thumbnail:hover {
   border-radius: 0;
 }
 
-.form-horizontal .control-label {
+.food-form .control-label {
   width: 100px;
 }
 
-.form-horizontal .controls {
+.food-form .controls {
   margin-left: 120px;
 }
