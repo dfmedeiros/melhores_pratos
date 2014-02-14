@@ -1,6 +1,6 @@
 class Panel::RestaurantsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :load_restaurant, only: [:show, :edit, :destroy, :publish]
+  before_filter :load_restaurant, except: [:index, :new, :create]
 
   def index
     @restaurants = current_user.restaurants
@@ -26,7 +26,6 @@ class Panel::RestaurantsController < ApplicationController
   end
 
   def update
-    @restaurant = current_user.restaurants.find(params[:id])
     if @restaurant.update(restaurant_params)
       redirect_to panel_restaurants_path, notice: I18n.t("panel.restaurants.update")
     else
