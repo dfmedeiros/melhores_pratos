@@ -1,1 +1,3 @@
 pt-BR:
+  app:
+    page_not_found: "Página não encontrada"
