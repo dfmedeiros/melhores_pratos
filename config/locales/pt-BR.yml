@@ -1,3 +1,16 @@
 pt-BR:
   app:
     page_not_found: "Página não encontrada"
+
+  panel:
+    foods:
+      destroy: "Prato removido com sucesso"
+
+    menu_categories:
+      destroy: "Categoria removida com sucesso"
+
+    restaurants:
+      create: "Restaurante criado com sucesso"
+      update: "Restaurante atualizado com sucesso"
+      publish: "Cardápio publicado com sucesso"
+      destroy: "Restaurante removido com sucesso"

@@ -24,7 +24,7 @@ class Panel::MenuCategoriesController < ApplicationController
   def destroy
     @menu_category.destroy
 
-    redirect_to panel_restaurant_foods_path(@restaurant), notice: "Categoria removida com sucesso"
+    redirect_to panel_restaurant_foods_path(@restaurant), notice: I18n.t("panel.menu_categories.destroy")
   end
 
   private

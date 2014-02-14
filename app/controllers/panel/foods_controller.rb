@@ -24,7 +24,7 @@ class Panel::FoodsController < ApplicationController
   def destroy
     @food.destroy
 
-    redirect_to panel_restaurant_foods_path(@restaurant), notice: "Prato removido com sucesso"
+    redirect_to panel_restaurant_foods_path(@restaurant), notice: I18n.t("panel.foods.destroy")
   end
 
   private

@@ -16,7 +16,7 @@ class Panel::RestaurantsController < ApplicationController
   def create
     @restaurant = current_user.restaurants.new(restaurant_params)
     if @restaurant.save
-      redirect_to panel_restaurants_path, notice: "Restaurante criado com sucesso."
+      redirect_to panel_restaurants_path, notice: I18n.t("panel.restaurants.create")
     else
       render :new
     end
@@ -28,7 +28,7 @@ class Panel::RestaurantsController < ApplicationController
   def update
     @restaurant = current_user.restaurants.find(params[:id])
     if @restaurant.update(restaurant_params)
-      redirect_to panel_restaurants_path, notice: "Restaurante atualizado com sucesso."
+      redirect_to panel_restaurants_path, notice: I18n.t("panel.restaurants.update")
     else
       render :edit
     end
@@ -38,12 +38,12 @@ class Panel::RestaurantsController < ApplicationController
     published_at = @restaurant.published_at ? nil : Time.current
     @restaurant.update_attributes(published_at: published_at)
 
-    redirect_to panel_restaurants_path, notice: "Menu publicado com sucesso."
+    redirect_to panel_restaurants_path, notice: I18n.t("panel.restaurants.publish")
   end
 
   def destroy
     @restaurant.destroy
-    redirect_to panel_restaurants_path, notice: "Restaurante removido com sucesso."
+    redirect_to panel_restaurants_path, notice: I18n.t("panel.restaurants.destroy")
   end
 
   private

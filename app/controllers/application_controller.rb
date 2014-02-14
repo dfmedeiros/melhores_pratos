@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_record_not_found
 
   def rescue_record_not_found
-    redirect_to root_path, flash: { error: I18n.t('app.page_not_found') }
+    redirect_to root_path, flash: { error: I18n.t("app.page_not_found") }
   end
 
   def configure_permitted_parameters
