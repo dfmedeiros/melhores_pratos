@@ -1,5 +1,5 @@
-class Panel::RestaurantsController < ApplicationController
-  before_filter :authenticate_user!
+class Panel::RestaurantsController < Panel::BaseController
+
   before_filter :load_restaurant, except: [:index, :new, :create]
 
   def index
@@ -43,18 +43,5 @@ class Panel::RestaurantsController < ApplicationController
   def destroy
     @restaurant.destroy
     redirect_to panel_restaurants_path, notice: I18n.t("panel.restaurants.destroy")
-  end
-
-  private
-
-  def load_restaurant
-    @restaurant = current_user.restaurants.find(params[:id])
-  end
-
-  def restaurant_params
-    params
-      .require(:restaurant)
-      .permit(:name, :slug, :zip_code, :street, :street_number, :neighborhood, :complement, :city_id,
-        :description, :phone_number, :extra_phone_number, :logo)
   end
 end

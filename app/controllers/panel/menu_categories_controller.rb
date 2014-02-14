@@ -1,6 +1,5 @@
-class Panel::MenuCategoriesController < ApplicationController
+class Panel::MenuCategoriesController < Panel::BaseController
 
-  before_filter :authenticate_user!
   before_filter :load_restaurant
   before_filter :load_food, only: [:show, :create]
   before_filter :load_category, except: [:create]
@@ -29,21 +28,11 @@ class Panel::MenuCategoriesController < ApplicationController
 
   private
 
-  def load_restaurant
-    @restaurant = current_user.restaurants.find(params[:restaurant_id])
-  end
-
   def load_category
     @menu_category = @restaurant.menu_categories.find(params[:id])
   end
 
   def load_food
     @food = Food.new
-  end
-
-  def menu_category_params
-    params
-      .require(:menu_category)
-      .permit(:name, :description)
   end
 end
