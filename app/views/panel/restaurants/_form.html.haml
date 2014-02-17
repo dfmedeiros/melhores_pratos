@@ -89,12 +89,24 @@
           = f.text_area :description, class: "span6"
   %tr
     %th
-      = f.label :avatar, "Imagem:"
+      = f.label :logo, "Logo:"
     %td
       .control-group
         .controls
           %span.prettyFile
             = f.file_field :logo
+            .input-append
+              %input.input-large{type: "text"}/
+              %a.btn{href: "#"} Escolher Arquivo
+
+  %tr
+    %th
+      = f.label :cover, "Capa:"
+    %td
+      .control-group
+        .controls
+          %span.prettyFile
+            = f.file_field :cover
             .input-append
               %input.input-large{type: "text"}/
               %a.btn{href: "#"} Escolher Arquivo

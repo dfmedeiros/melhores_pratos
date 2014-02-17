@@ -5,6 +5,7 @@ class CreateRestaurants < ActiveRecord::Migration
       t.text :description
       t.string :slug, null: false, default: ""
       t.string :logo
+      t.string :cover
       t.string :website
       t.string :zip_code, null: false, default: ""
       t.string :street, null: false, default: ""

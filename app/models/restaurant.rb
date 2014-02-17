@@ -1,6 +1,7 @@
 class Restaurant < ActiveRecord::Base
 
-  mount_uploader :logo, LogoUploader
+  mount_uploader :logo, RestaurantLogoUploader
+  mount_uploader :cover, RestaurantCoverUploader
 
   belongs_to :city
   belongs_to :user

@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
   :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
-  mount_uploader :avatar, LogoUploader
+  mount_uploader :avatar, UserAvatarUploader
 
   has_many :restaurants
   has_many :social_accounts, dependent: :destroy

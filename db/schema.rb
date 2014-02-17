@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20140210232842) do
     t.text     "description"
     t.string   "slug",               default: "", null: false
     t.string   "logo"
+    t.string   "cover"
     t.string   "website"
     t.string   "zip_code",           default: "", null: false
     t.string   "street",             default: "", null: false
