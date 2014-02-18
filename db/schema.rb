@@ -72,10 +72,10 @@ ActiveRecord::Schema.define(version: 20140210232842) do
   create_table "restaurants", force: true do |t|
     t.string   "name",               default: "", null: false
     t.text     "description"
+    t.string   "website"
     t.string   "slug",               default: "", null: false
     t.string   "logo"
     t.string   "cover"
-    t.string   "website"
     t.string   "zip_code",           default: "", null: false
     t.string   "street",             default: "", null: false
     t.string   "street_number",      default: "", null: false

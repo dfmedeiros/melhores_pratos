@@ -3,6 +3,7 @@ class CreateRestaurants < ActiveRecord::Migration
     create_table :restaurants do |t|
       t.string :name, null: false, default: ""
       t.text :description
+      t.string :website
       t.string :slug, null: false, default: ""
       t.string :logo
       t.string :cover
