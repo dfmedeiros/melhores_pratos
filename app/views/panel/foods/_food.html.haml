@@ -2,7 +2,7 @@
   .media-body
     .media
       %a.pull-left{href: "#"}
-        = image_tag food.photo_url, alt: "", class: "media-object img-polaroid", size: "55x55"
+        = image_tag food.photo_url(:thumb_50), alt: "", class: "media-object img-polaroid"
       .media-body
         %h5.media-heading
           %a{href: "#"}= food.name

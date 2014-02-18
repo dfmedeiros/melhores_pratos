@@ -11,7 +11,7 @@
               - if user_signed_in?
                 %li.dropdown
                   = link_to "#" do
-                    = image_tag current_user.avatar_url, size: "24x24", class: "img-rounded"
+                    = image_tag current_user.avatar_url(:thumb_25), class: "img-rounded"
                     = current_user.name
                     %i.icon-angle-down
                   %ul.dropdown-menu
