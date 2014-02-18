@@ -20,6 +20,7 @@ gem 'mini_magick'
 group :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
+  gem 'simplecov', '~> 0.7.1', require: false
 end
 
 group :development, :test do
