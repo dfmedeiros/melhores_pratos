@@ -5,7 +5,7 @@
   %ul.media-list.mo-border-bottom
     %li.media
       %a.pull-left.thumbnail{href: "#"}
-        = image_tag @restaurant.logo_url, width: 120, height: 95, class: "media-object"
+        = image_tag @restaurant.logo_url(:thumb_125), class: "media-object"
       .media-body
         %h5.media-heading
           = link_to @restaurant.name

@@ -15,6 +15,8 @@ gem 'omniauth-google-oauth2'
 gem 'carrierwave'
 gem 'nested_form'
 
+gem 'mini_magick'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
