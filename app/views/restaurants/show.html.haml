@@ -1,0 +1,45 @@
+.row
+  .span4
+    %aside
+      %a.thumbnail{href: "#"}
+        = image_tag @restaurant.logo_url(:thumb_250)
+      %br
+        .widget
+          %h4.rheading
+            Cardápios
+            %span
+          %ul.cat
+            %li
+              %a#01.city-option.active{href: "#"} Carnes
+            %li
+              %a#02.city-option{href: "#"} Massas
+            %li
+              %a#03.city-option{href: "#"} Saladas
+  .span8
+    %article.blog-post
+      .post-heading
+        %h3
+          = @restaurant.name
+    .ultimocardapiocadastrado
+      .info-row
+        .left
+          %i.icon-map-marker
+          = @restaurant.formatted_address
+        .right
+          - if @restaurant.phone_number.present?
+            %i.icon-phone
+            = @restaurant.phone_number
+      .info-row
+        .left
+          %i.icon-exchange
+          Como chegar?
+        .right
+          - if @restaurant.extra_phone_number.present?
+            %i.icon-mobile-phone
+            = @restaurant.extra_phone_number
+      = image_tag @restaurant.cover_url(:thumb_600), class: 'img-polaroid banner-menu'
+      .info-row
+        .left
+          = link_to @restaurant.website do
+            %i.icon-globe
+            = @restaurant.website

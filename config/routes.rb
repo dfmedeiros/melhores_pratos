@@ -11,6 +11,7 @@ MelhoresPratos::Application.routes.draw do
 
   resources :cities
   resources :cuisines
+  resources :restaurants, only: [:show]
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 

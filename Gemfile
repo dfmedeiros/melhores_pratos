@@ -15,6 +15,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'carrierwave'
 gem 'nested_form'
+gem 'draper'
 
 gem 'mini_magick'
 

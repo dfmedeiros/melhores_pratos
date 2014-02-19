@@ -16,4 +16,6 @@ class Restaurant < ActiveRecord::Base
   validates :neighborhood, presence: true
   validates :city, presence: true
 
+  delegate :state, to: :city
+
 end

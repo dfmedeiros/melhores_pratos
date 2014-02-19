@@ -2950,3 +2950,16 @@ h4.login-separator div{
 #ew03{
     margin-top: 130px;
 }
+
+.ultimocardapiocadastrado .info-row .right{
+    float: right;
+    width: 28%;
+    text-align: right;
+}
+
+.ultimocardapiocadastrado .info-row .left{
+    float: left;
+    width: 70%;
+    text-align: left;
+}
+
