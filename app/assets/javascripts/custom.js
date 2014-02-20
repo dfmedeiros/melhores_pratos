@@ -130,4 +130,18 @@ jQuery(document).ready(function($) {
      return false;
   });
 
+  $('.city-option').click(function(){
+    id=$(this).attr('id');
+    $('.city-tab').hide('slow');
+    $('#menu_category_'+id).show('slow');
+    $('#menu_category_'+id+'b').show('slow');
+    $('.city-option').removeClass('active');
+    $('.open-window a').removeClass('active');
+    $('.city-option-alt').removeClass('active');
+    $(this).addClass('active');
+    $('#ow'+id).addClass('active');
+    $('#city-option-alt'+id).addClass('active');
+    return false;
+  });
+
 });
