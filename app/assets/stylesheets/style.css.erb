@@ -300,7 +300,7 @@ nav select {
     position: absolute;
     width: 27px;
     height: 27px;
-    background-image: url(../img/iview/bg_direction_nav.png);
+    background-image: url(<%= asset_path "iview/bg_direction_nav.png" %>);
     text-indent: -9999px;
     -webkit-transition: left 0.3s ease-in-out;
     -webkit-transition-property: left,right;
@@ -434,7 +434,7 @@ section#intro{
 }
 
 .line {
-    background:url(../img/line.jpg) top repeat-x;
+    background:url(<%= asset_path "line.jpg" %>) top repeat-x;
     height:10px;
 }
 
@@ -1027,7 +1027,7 @@ aside .widget ul.cat {
 }
 aside .widget ul.cat li {
     padding-left:24px;
-    background-image: url("../img/glyphicons-halflings.png");
+    background-image: url(<%= asset_path "glyphicons-halflings.png" %>);
     background-repeat: no-repeat;
     background-position: -456px -69px;
 }
@@ -1894,10 +1894,10 @@ ol.alpha-upper li				{ list-style:upper-alpha; }
 ol.alpha-lower li				{ list-style:lower-alpha; }
 ol.decimal li					{ list-style:decimal; }
 ol.roman li					{ list-style:upper-roman; }
-ul.diamond li					{ padding:0 0 0 15px; background:transparent url('../img/list/diamond.png') no-repeat 0 6px; }
-ul.arrow li					{ padding:0 0 0 20px; background:transparent url('../img/list/arrow.png') no-repeat 0 6px; }
-ul.check li					{ padding:0 0 0 18px; background:transparent url('../img/list/check.png') no-repeat 0 6px; }
-ul.circle li					{ padding:0 0 0 15px; background:transparent url('../img/list/circle.png') no-repeat 0 8px; }
+ul.diamond li					{ padding:0 0 0 15px; background:transparent url(<%= asset_path 'list/diamond.png' %>) no-repeat 0 6px; }
+ul.arrow li					{ padding:0 0 0 20px; background:transparent url(<%= asset_path 'list/arrow.png' %>) no-repeat 0 6px; }
+ul.check li					{ padding:0 0 0 18px; background:transparent url(<%= asset_path 'list/check.png' %>) no-repeat 0 6px; }
+ul.circle li					{ padding:0 0 0 15px; background:transparent url(<%= asset_path 'list/circle.png' %>) no-repeat 0 8px; }
 ul.list ul, ul.list ol, ol.list ol, ol.list ul 		{ margin:4px 0 5px 30px; font-size:90%;  }
 ul.list ul li, ul ol li,	ol.list ol li, ol.list ul li 	 { margin-bottom:6px; }
 ul.list li , ul.list li							{ line-height:21px; margin: 0 0 12px 5px; }
@@ -2925,7 +2925,7 @@ h4.login-separator div{
 
 .expansible-window{
     width: 600px;
-    background:  url(../img/arrow.png) no-repeat 5px 5px;
+    background:  url(<%= asset_path "arrow.png" %>) no-repeat 5px 5px;
     position: absolute;
     margin: 0 0 20px 300px;
     display:none;
@@ -2935,7 +2935,7 @@ h4.login-separator div{
     float: right;
     width: 560px;
     padding: 20px 10px;
-    background: #A52625 url(../img/arrow.png) no-repeat 0px;
+    background: #A52625 url(<%= asset_path "arrow.png" %>) no-repeat 0px;
 
 }
 
