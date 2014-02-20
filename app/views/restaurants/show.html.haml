@@ -40,6 +40,4 @@
       = image_tag @restaurant.cover_url(:thumb_600), class: 'img-polaroid banner-menu'
       .info-row
         .left
-          = link_to @restaurant.website do
-            %i.icon-globe
-            = @restaurant.website
+          = @restaurant.formatted_website
