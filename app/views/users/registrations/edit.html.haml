@@ -35,7 +35,7 @@
         = f.label :password_confirmation, "Confirmação de Senha", class: "control-label"
         .controls
           = f.password_field :password_confirmation, autocomplete: "off", class: "span8"
-      - if f.object.encrypted_password.present?
+      - unless f.object.encrypted_password.blank?
         .control-group
           = f.label :current_password, "Senha Atual", class: "control-label"
           .controls

@@ -29,22 +29,28 @@
 
           .row-fluid
             .span12
+              = f.label :name do
+                Nome
+                %span *
+              = f.text_field :name, placeholder: "Nome", class: "input-block-level"
+          .row-fluid
+            .span12
               = f.label :email do
                 Email
                 %span *
-              = f.text_field :email, placeholder: "Seu email", class: "input-block-level"
+              = f.text_field :email, placeholder: "Email", class: "input-block-level"
           .row-fluid
             .span12
               = f.label :password do
                 Senha
                 %span *
-              = f.password_field :password, placeholder: "Sua senha", class: "input-block-level"
+              = f.password_field :password, placeholder: "Senha", class: "input-block-level"
           .row-fluid
             .span12
               = f.label :password_confirmation do
                 Confirmar Senha
                 %span *
-              = f.password_field :password_confirmation, placeholder: "Confirme sua senha", class: "input-block-level"
+              = f.password_field :password_confirmation, placeholder: "Confirmar Senha", class: "input-block-level"
               = f.button "Cadastrar", class: "btn btn-theme btn-block"
         .modal-footer
           %p

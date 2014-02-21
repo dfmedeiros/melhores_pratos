@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   end
 
   def password_required?
-    super && encrypted_password.present?
+    super && (new_record? || encrypted_password.present?)
   end
 
   def update_with_password(params, *options)

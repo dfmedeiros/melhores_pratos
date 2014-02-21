@@ -7,23 +7,29 @@
     .row-registro
       = form_for :user, url: user_registration_path, html: { class: "registro-form form-horizontal" } do |f|
         .control-group
+          = f.label :name, class: "control-label" do
+            Nome
+            %span *
+          .controls
+            = f.text_field :name, placeholder: "Nome"
+        .control-group
           = f.label :email, class: "control-label" do
             Email
             %span *
           .controls
-            = f.email_field :email, placeholder: "Seu email"
+            = f.email_field :email, placeholder: "Email"
         .control-group
           = f.label :password, class: "control-label" do
             Senha
             %span *
           .controls
-            = f.password_field :password, placeholder: "Sua senha"
+            = f.password_field :password, placeholder: "Senha"
         .control-group
           = f.label :password_confirmation, class: "control-label" do
             Confirmar Senha
             %span *
           .controls
-            = f.password_field :password_confirmation, placeholder: "Confirme sua senha"
+            = f.password_field :password_confirmation, placeholder: "Confirmar Senha"
         .control-group
           .controls.submit
             = f.submit "Registro", class: "btn btn-theme"
