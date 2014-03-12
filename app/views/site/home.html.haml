@@ -29,5 +29,4 @@
         Últimos cardápios
         %span
       .row-fluid
-        - 3.times do
-          = render "recent_restaurant"
+        = render partial: "recent_restaurant", collection: @restaurants, as: :restaurant

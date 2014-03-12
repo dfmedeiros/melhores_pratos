@@ -1,9 +1,9 @@
-.row-fluid.ultimocardapiocadastrado{"data-content" => "<strong>Cidade: </strong> São Paulo - SP <br /> <strong>Total de Recomendações: </strong> 155 <br /> <strong>Prato mais Recomendado: </strong> Filé de Porco <br /> <strong>Descrição curta: </strong> Nam urna metus, interdum in ultricies ut Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing...", "data-original-title" => "<img src='assets/avatar-restaurante1.jpg' class='avatar20 borderradius2' /> <strong>Kompa Restaurante & Pizzaria</strong>", "data-rel" => "popover"}
+.row-fluid.ultimocardapiocadastrado{ data: { content: restaurant.popover_info, rel: "popover", "original-title" => restaurant.popover_title } }
   .span3
-    = link_to "#", class: "thumbnail span12" do
-      = image_tag "avatar-restaurante1.jpg", alt: "Restaurant name"
+    = link_to restaurant_path(restaurant), class: "thumbnail span12" do
+      = image_tag restaurant.logo_url(:thumb_50), alt: restaurant.name
   .span9
     %h3
-      = link_to "Kompa Restaurante & Pizzaria", "#"
-    %p Cabo Branco, João Pessoa, PB
-    %p 83 3245 8765
+      = link_to restaurant.name, restaurant_path(restaurant)
+    %p= restaurant.short_formatted_address
+    %p= restaurant.phone_number

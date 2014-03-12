@@ -18,4 +18,6 @@ class Restaurant < ActiveRecord::Base
 
   delegate :state, to: :city
 
+  scope :published, -> { where("published_at IS NOT NULL").order("published_at DESC") }
+
 end
